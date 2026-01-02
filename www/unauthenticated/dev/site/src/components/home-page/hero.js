@@ -1,58 +1,45 @@
-import Link from "next/link";
-import Image from "next/image";
+import React from "react";
 
-function Hero({ heroItems }) {
+export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen bg-[#13144D] pt-[120px] overflow-hidden">
-      {heroItems?.map((heroItem, i) => (
-        <div key={i} className="custom-container z-[2]">
-          <div className="hero-inner grid grid-cols-12 items-center gap-6">
-            {/* TEXT CONTENT */}
-            <div className="md:col-span-7 col-span-12">
-              <div
-                className="text-[28px] md:text-[64px] tracking-[3px] md:tracking-[5px] text-[#22C763] font-bold md:mb-[2px] mb-[10px]"
-                dangerouslySetInnerHTML={{
-                  __html: heroItem.heroCategory,
-                }}
-              />
-              <h2
-                className="text-[32px] md:text-[52px] leading-[40px] md:leading-[60px] font-bold text-white mb-[20px]"
-                dangerouslySetInnerHTML={{
-                  __html: heroItem.heroTitle,
-                }}
-              />
-              <div
-                className="text-[18px] md:text-[24px] leading-7 md:leading-8 font-poppins tracking-[2px] md:tracking-[5px] text-white max-w-full md:max-w-[650px] mb-[10px] md:mb-[30px]"
-                dangerouslySetInnerHTML={{
-                  __html: heroItem.heroDescription,
-                }}
-              />
-              <div>
-                <Link href="/demo">
-                  <a className="boxed-btn text-[20px] md:text-[24px] font-bold font-poppins">
-                    Schedule a demo &gt;
-                  </a>
-                </Link>
-              </div>
-            </div>
-
-            {/* IMAGE CONTENT */}
-            <div className="md:col-span-5 col-span-12 flex justify-center">
-              <div className="w-full max-w-[375px]">
-                <Image
-                  src={heroItem?.image}
-                  alt="Hero visual"
-                  width={375}
-                  height={375}
-                  className="rounded-xl shadow-xl object-contain"
+    <section className="w-full bg-sky-100">
+      {/* SAFE CONTENT FRAME */}
+      <div className="mx-auto max-w-7xl px-8 sm:px-12 lg:px-16">
+        <div className="py-20 lg:py-28">
+          
+          {/* HERO GRID — HEAVIER LEFT COLUMN */}
+          <div className="grid grid-cols-1 lg:grid-cols-[400px,1fr] gap-16 items-center">
+            
+            {/* LEFT COLUMN — STRONG LOGO ANCHOR */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="h-64 w-64 rounded-full bg-white/80 flex items-center justify-center">
+                <img
+                  src="/images/logo-placeholder.png"
+                  alt="Environmental Haus Logo"
+                  className="h-44 w-44 object-contain"
                 />
               </div>
             </div>
+
+            {/* RIGHT COLUMN — TEXT (NOW FORCED FURTHER RIGHT) */}
+            <div className="text-left">
+              <div className="space-y-2">
+                <div className="uppercase text-orange-500 font-semibold tracking-tight leading-none text-4xl sm:text-5xl lg:text-6xl">
+                  Florida’s Premier
+                </div>
+                <div className="uppercase text-orange-500 font-semibold tracking-tight leading-none text-4xl sm:text-5xl lg:text-6xl">
+                  Environmental Haus
+                </div>
+              </div>
+
+              <p className="mt-6 uppercase text-orange-500 text-sm sm:text-base tracking-wide">
+                CIVIL DESIGN - PROPERTY MANAGEMENT - INFRASTRUCTURE MAINTENANCE
+              </p>
+            </div>
+
           </div>
         </div>
-      ))}
+      </div>
     </section>
   );
 }
-
-export default Hero;

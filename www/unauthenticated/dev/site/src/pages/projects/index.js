@@ -1,35 +1,28 @@
 import Head from 'next/head';
-import { Fragment } from 'react';
-import Breadcrumb from '../../components/breadcrumb';
-import HeaderTwo from '../../components/header/header-2';
-import AllProjects from '../../components/projects/all-projects';
-import { getAllItems } from '../../lib/items-util';
+import HeaderThree from '../../components/header/header-3';
+import Hero from '../../components/home-page/hero';
 
-function allItemsPage(props) {
-    return (
-        <Fragment>
-            <Head>
-                <title>All Projects</title>
-                <meta
-                    name='description'
-                    content='A list of all programming-related tutorials and projects!'
-                />
-            </Head>
-            <HeaderTwo />
-            <Breadcrumb activePage={'Projects'} pageTitle={'Our Projects'} />
-            <AllProjects projects={props.projects} />
-        </Fragment>
-    );
+export default function HomePage() {
+  return (
+    <>
+      <Head>
+        <title>Blue Trust Water Management</title>
+        <meta
+          name="description"
+          content="Florida’s Premier Environmental Haus"
+        />
+      </Head>
+
+      {/* Header / Navigation */}
+      <HeaderThree />
+
+      {/* Hero Section */}
+      <Hero />
+
+      {/* 
+        All SmartTIX-related sections have been intentionally removed.
+        We will reintroduce Blue Trust–specific sections next.
+      */}
+    </>
+  );
 }
-
-export function getStaticProps() {
-    const allItems = getAllItems('projects');
-
-    return {
-        props: {
-            projects: allItems,
-        },
-    };
-}
-
-export default allItemsPage;

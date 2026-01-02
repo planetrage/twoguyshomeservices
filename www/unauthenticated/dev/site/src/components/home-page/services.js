@@ -1,88 +1,174 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import * as AiIcons from 'react-icons/ai';
-import * as MdIcons from 'react-icons/md';
-import * as PiIcons from 'react-icons/pi';
-import * as TiIcons from 'react-icons/ti';
-import * as TbIcons from 'react-icons/tb';
-import * as RiIcons from 'react-icons/ri';
+export default function Services() {
+  const TEXT = "text-[#094886]";
 
-const ICON_LIBRARIES = {
-  Ai: AiIcons,
-  Md: MdIcons,
-  Pi: PiIcons,
-  Ti: TiIcons,
-  Tb: TbIcons,
-  Ri: RiIcons,
-};
-
-function Services({ services }) {
   return (
-    <div className="service-area relative pt-[35px] bg-[#F4F5F7] before:absolute before:h-[336px] before:w-[336px] before:top-[170px] before:left-[-168px]">
-      <div className="custom-container">
-        <div className="lg:grid lg:grid-cols-12 flex flex-col">
-          {/* Top Row: Image + Text */}
-          <div className="lg:col-span-12 flex flex-col lg:flex-row items-stretch">
-            {/* Left (Image) */}
-            <div className="lg:w-1/2 w-full flex items-center justify-center mb-8 lg:mb-0">
-              <div className="w-full max-w-[572px]">
-                <Image
-                  src="/images/service/Hardhat_guy_homepage[54].png"
-                  alt="Service Image"
-                  quality={70}
-                  width={572}
-                  height={555}
-                  objectFit="cover"
-                  className="rounded-lg w-full h-auto"
-                  priority
-                />
-              </div>
-            </div>
+    <section className="w-full">
+      {/* =========================================================
+          SECTION 1: ENGINEERED SOLUTIONS (FULL-WIDTH BAND)
+         ========================================================= */}
+      <div className="w-full bg-[#eaf6f8]">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="py-20">
+            {/* Centered engineered module */}
+            <div className="mx-auto max-w-5xl">
+              <div className="grid grid-cols-[14px,1fr] gap-8 items-stretch">
+                {/* FULL-HEIGHT STRUCTURAL SPINE */}
+                <div className="flex justify-center">
+                  <div className="w-px bg-[#094886]/40 rounded-full" />
+                </div>
 
-            {/* Right (Text) */}
-            <div className="lg:w-1/2 w-full flex flex-col justify-center px-2">
-              <div className="w-full max-w-[600px] mx-auto">
-                <h2 className="text-[32px] md:text-[56px] md:leading-[64px] text-[#13144D] mb-[30px] mt-[20px] text-center lg:text-left">
-                  Most Advanced,<br /> Easy-to-Use<br /> Ticket Management<br /> Platform for Utility<br /> Damage Prevention
-                </h2>
-                <span className="text-[16px] md:text-[24px] leading-6 md:leading-[32px] mb-[35px] block font-poppins text-center lg:text-left text-[#30373E]">
-                  Built from the ground up through a collaboration of utility locators, utility owners, and industry experts, SmartTIX leverages leading-edge tech to advance utility locating ticket management for every stakeholder organization.
-                </span>
-              </div>
-            </div>
-          </div>
+                {/* CONTENT */}
+                <div className="flex flex-col items-center text-center">
+                  {/* Headline */}
+                  <h2 className={`text-[30px] sm:text-[34px] font-semibold ${TEXT} leading-tight`}>
+                    Engineered Solutions for Every Property Type
+                  </h2>
+                  <p className={`mt-4 text-[15px] ${TEXT} leading-relaxed max-w-2xl`}>
+                    Serving homeowners, developers, and municipalities with turnkey water-management expertise.
+                  </p>
 
-          {/* Services Grid */}
-          <div className="lg:col-span-12 pt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[25px] w-full">
-              {services?.map((service, index) => {
-                const iconName = service?.icon;
-                const prefix = iconName?.substring(0, 2);
-                const IconLibrary = ICON_LIBRARIES[prefix];
-                const Icon = IconLibrary ? IconLibrary[iconName] : null;
-
-                return (
-                  <div className="service-box w-full" key={service?.title || index}>
-                    <div className="service-box-inner">
-                      <div className="service-list flex items-start">
-                        <div className="icon text-[#22C763] text-[32px] mr-3">
-                          {Icon && <Icon />}
-                        </div>
-                        <div className="content">
-                          <h3 className="title">{service?.title}</h3>
-                          <p className="desc">{service?.content}</p>
-                        </div>
-                      </div>
+                  {/* CATEGORY ROW */}
+                  <div className="mt-14 w-full">
+                    <div className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl">
+                      <CategoryItem label="Residential" />
+                      <CategoryItem label="Commercial" />
+                      <CategoryItem label="Municipal & Industrial" />
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* =========================================================
+          SECTION 2: WHAT WE DO (PURE WHITE)
+         ========================================================= */}
+      <div className="w-full bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="py-24">
+            <h2 className={`text-center text-[34px] font-bold tracking-wide mb-20 ${TEXT}`}>
+              WHAT WE DO
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
+              <ServiceCard
+                title="Civil Design & Services"
+                button="Call For A Consultation"
+                paragraphs={[
+                  [
+                    "Comprehensive Utility Design:",
+                    "Blue Trust Water Management specializes in complete civil design and permitting for water, wastewater, and stormwater systems.",
+                  ],
+                  [
+                    "End-to-End Project Delivery:",
+                    "Our engineers bring decades of experience creating utility networks that meet local and state standards while balancing constructability and cost efficiency.",
+                  ],
+                  [
+                    "Full Permitting & Coordination:",
+                    "We guide every project through the permitting process, working directly with agencies to ensure timely approvals and smooth transitions from concept to construction — delivering reliability, compliance, and value.",
+                  ],
+                ]}
+              />
+
+              <ServiceCard
+                title="Property Management Vendor"
+                button="Join Our Program"
+                paragraphs={[
+                  [
+                    "One Partner for Every Inspection:",
+                    "Managing a property shouldn't mean juggling vendors. Blue Trust consolidates all environmental and utility services under one roof to keep your site compliant and worry-free.",
+                  ],
+                  [
+                    "Comprehensive Coverage:",
+                    "We handle mandatory inspections and services — stormwater, backflow, fire systems, grease traps — plus recommended programs like lift-station care, pond spraying, and solids removal.",
+                  ],
+                  [
+                    "Seamless Oversight:",
+                    "Our team schedules, documents, and manages everything so you can focus on your business while we keep your property performing at its best.",
+                  ],
+                ]}
+              />
+
+              <ServiceCard
+                title="Maintenance & Rehabilitation"
+                button="Request A Service"
+                paragraphs={[
+                  [
+                    "Total System Care:",
+                    "Blue Trust delivers full-service stormwater and utility maintenance to keep your infrastructure clean, functional, and compliant.",
+                  ],
+                  [
+                    "Comprehensive Solutions:",
+                    "From vac-truck drain cleaning, system repairs, and pond cleanouts to pipelining, shoreline spraying, lift-station maintenance, septic pump-outs, and more — we bring engineering precision to every task.",
+                  ],
+                  [
+                    "Protect Your Investment:",
+                    "Whether restoring efficiency or extending infrastructure life, we provide proactive care that safeguards your assets and keeps water flowing exactly where it should.",
+                  ],
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CategoryItem({ label }) {
+  const TEXT = "text-[#094886]";
+
+  return (
+    <div className="flex flex-col items-center text-center">
+      {/* ICON */}
+      <div className="w-16 h-16 rounded-full bg-white border border-black/10 shadow-sm flex items-center justify-center mb-5">
+        <span className={`${TEXT} text-sm font-semibold`}>ICON</span>
+      </div>
+
+      {/* LABEL + CHECK (INLINE, TIGHT) */}
+      <div className="flex items-center gap-2">
+        <span className={`text-[18px] font-semibold ${TEXT}`}>
+          {label}
+        </span>
+        <span className={`text-[18px] font-semibold ${TEXT}`}>✓</span>
       </div>
     </div>
   );
 }
 
-export default Services;
+function ServiceCard({ title, paragraphs, button }) {
+  const TEXT = "text-[#094886]";
+
+  return (
+    <div className="bg-white border border-black/10 rounded-2xl shadow-sm p-10 flex flex-col text-center min-h-[520px]">
+      {/* ICON */}
+      <div className="w-16 h-16 mx-auto mb-8 rounded-full bg-[#f5f6f7] border border-black/10 shadow-sm flex items-center justify-center">
+        <span className={`${TEXT} text-sm font-semibold`}>ICON</span>
+      </div>
+
+      {/* TITLE */}
+      <h3 className={`text-[18px] font-semibold mb-6 ${TEXT}`}>
+        {title}
+      </h3>
+
+      {/* BODY */}
+      <div className={`text-left space-y-5 text-[14px] ${TEXT} mb-10 leading-relaxed`}>
+        {paragraphs.map(([label, text]) => (
+          <p key={label}>
+            <strong>{label}</strong> {text}
+          </p>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div className="mt-auto">
+        <button className="px-7 py-3 rounded-full bg-[#094886] text-white text-[14px] font-medium hover:opacity-90 transition">
+          {button}
+        </button>
+      </div>
+    </div>
+  );
+}
+
