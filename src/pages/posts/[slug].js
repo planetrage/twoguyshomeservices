@@ -5,7 +5,7 @@ import { getAllItems, getItemData, getItemsFiles } from "../../lib/items-util";
 import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostCategories } from "../../lib/getPostCategories";
 import { getRelatedPosts } from "../../lib/getRelatedPosts";
-import DisqusForm from "../../components/posts/disqus-form";
+// import DisqusForm from "../../components/posts/disqus-form";
 import { getPostTags } from "../../lib/getPostTags";
 import Link from "next/link";
 
