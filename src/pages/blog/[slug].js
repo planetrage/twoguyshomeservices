@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import HeaderOne from "../../components/header/header-1";
-import PostContent from "../../components/posts/post-detail/post-content";
+import BlogContent from "../../components/content-types/blog/blog-content";
 import SeoHead from "../../components/seo/seo-head";
 import SchemaMarkup from "../../components/seo/schema-markup";
 import { getItemData, getItemsFiles } from "../../lib/items-util";
@@ -11,7 +11,7 @@ function BlogDetailPage({ post }) {
       <SeoHead item={post} />
       <SchemaMarkup item={post} schemaType="BlogPosting" />
       <HeaderOne />
-      <PostContent post={post} />
+      <BlogContent post={post} />
     </Fragment>
   );
 }
