@@ -1,58 +1,83 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import LightningDivider from '../ui/LightningDivider';
+import GoldCTA from '../ui/GoldCTA';
 
-function Hero({ heroItems }) {
+function Hero() {
   return (
-    <section className="relative w-full min-h-screen bg-[#13144D] pt-[120px] overflow-hidden">
-      {heroItems?.map((heroItem, i) => (
-        <div key={i} className="custom-container z-[2]">
-          <div className="hero-inner grid grid-cols-12 items-center gap-6">
-            {/* TEXT CONTENT */}
-            <div className="md:col-span-7 col-span-12">
-              <div
-                className="text-[28px] md:text-[64px] tracking-[3px] md:tracking-[5px] text-[#22C763] font-bold md:mb-[2px] mb-[10px]"
-                dangerouslySetInnerHTML={{
-                  __html: heroItem.heroCategory,
-                }}
-              />
-              <h2
-                className="text-[32px] md:text-[52px] leading-[40px] md:leading-[60px] font-bold text-white mb-[20px]"
-                dangerouslySetInnerHTML={{
-                  __html: heroItem.heroTitle,
-                }}
-              />
-              <div
-                className="text-[18px] md:text-[24px] leading-7 md:leading-8 font-poppins tracking-[2px] md:tracking-[5px] text-white max-w-full md:max-w-[650px] mb-[10px] md:mb-[30px]"
-                dangerouslySetInnerHTML={{
-                  __html: heroItem.heroDescription,
-                }}
-              />
-              <div>
-                <Link
-                  href="/demo"
-                  className="boxed-btn text-[20px] md:text-[24px] font-bold font-poppins">
-                  
-                    Explore Our Services &gt;
-                  
-                </Link>
-              </div>
-            </div>
+    <section
+      className="relative w-full overflow-hidden"
+      style={{
+        minHeight: '80vh',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundImage: 'linear-gradient(rgba(11,17,32,0.6), rgba(11,17,32,0.6)), url(/images/hero/hero-temple-goldlight.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="custom-container relative z-10 py-24 md:py-32">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Eyebrow */}
+          <p
+            className="mb-6"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-small)',
+              fontWeight: 600,
+              letterSpacing: 'var(--tracking-caps)',
+              textTransform: 'uppercase',
+            }}
+          >
+            <span className="gold-text">Structured Intelligence for Gaming</span>
+          </p>
 
-            {/* IMAGE CONTENT */}
-            <div className="md:col-span-5 col-span-12 flex justify-center">
-              <div className="w-full max-w-[375px]">
-                <Image
-                  src={heroItem?.image}
-                  alt="Hero visual"
-                  width={375}
-                  height={375}
-                  className="rounded-xl shadow-xl object-contain"
-                />
-              </div>
-            </div>
+          {/* Headline */}
+          <h1
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-hero)',
+              fontWeight: 700,
+              lineHeight: 'var(--leading-display)',
+              letterSpacing: 'var(--tracking-display)',
+              color: 'var(--marble-white)',
+              marginBottom: 'var(--space-lg)',
+            }}
+          >
+            Find the Slots<br />Worth Playing
+          </h1>
+
+          {/* Subhead */}
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--text-body-lg)',
+              lineHeight: 'var(--leading-body)',
+              color: 'var(--marble-warm)',
+              marginBottom: 'var(--space-xl)',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            RTP-verified reviews. Data-driven guides. No hype.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <GoldCTA href="/posts" variant="cta">
+              Explore Top Slots
+            </GoldCTA>
+            <GoldCTA href="/about" variant="ghost">
+              How We Rate &rarr;
+            </GoldCTA>
           </div>
         </div>
-      ))}
+      </div>
+
+      {/* Lightning divider at bottom */}
+      <div className="absolute bottom-0 left-0 w-full">
+        <LightningDivider />
+      </div>
     </section>
   );
 }

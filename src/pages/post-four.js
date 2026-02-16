@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
-import HeaderThree from '../components/header/header-3';
 import Banner from '../components/banners/title-banner-posts-three';
 import BannerOne from '../components/banners/posts-banner-six';
 import Services from '../components/home-page/services-one-bgAzure';
@@ -10,9 +9,8 @@ function PostOne(props) {
     return (
         <Fragment>
             <Head>
-                <title>SmartTIX Innovation</title>
+                <title>Casino Payout Rankings — Goonzerflow</title>
             </Head>
-            <HeaderThree />
             <Banner />
             <BannerOne />
             <Services services={props.services} />

@@ -1,15 +1,18 @@
 function Banner() {
     return (
-      <div className="bg-gradient-to-r from-[#13144D] to-[#22C763] mt-[60px] md:mt-[100px]">
+      <div className="olympus-sky" style={{ marginTop: 0 }}>
         <div className="custom-container pt-[60px] pb-[60px] md:pt-24 md:pb-24">
           <div className="text-center">
-            <p className="text-[28px] md:text-[52px] text-white font-bold leading-snug">
-              SmartTIX Launches its Innovative Ticket Management Platform
+            <p
+              className="text-[28px] md:text-[52px] font-bold leading-snug"
+              style={{ color: 'var(--marble-white)', fontFamily: 'var(--font-display)', letterSpacing: 'var(--tracking-display)' }}
+            >
+              Top 10 Online Casinos Ranked by Payout Speed
             </p>
           </div>
         </div>
       </div>
     );
   }
-  
-export default Banner;  
+
+export default Banner;

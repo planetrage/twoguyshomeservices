@@ -2,14 +2,12 @@ import Link from "next/link";
 
 function Banner() {
     return (
-        <div className='container pt-24 pb-12'>
+        <div className='custom-container' style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-lg)' }}>
             <div className='grid grid-cols-1'>
-                <p className="text-[26px] text-black md:mb-[15px] mb-[5px] text-center">
-                    Wow! We love your enthusiasm but we are just a little longer away from going live.  The live link is coming soon.  Thanks for your patience.  If you're interested in a demo please head to over and schedule some time with us: 
-                    <Link href='/demo' className="pl-1">
-                        
-                            click here
-                        
+                <p className="text-[26px] md:mb-[15px] mb-[5px] text-center" style={{ color: 'var(--marble-warm)' }}>
+                    We are getting ready to launch! The live platform is coming soon. If you are interested in early access, head over and get in touch:
+                    <Link href='/demo' className="pl-1" style={{ color: 'var(--gold-primary)' }}>
+                        click here
                     </Link>
                 </p>
             </div>

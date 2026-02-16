@@ -1,4 +1,4 @@
 ---
-title: "Ticket Load Analysis"
-icon: "LuTicket"
+title: "Bankroll Analysis"
+icon: "MdOutlineAnalytics"
 ---

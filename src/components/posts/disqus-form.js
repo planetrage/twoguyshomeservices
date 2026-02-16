@@ -1,12 +1,12 @@
 import { DiscussionEmbed } from 'disqus-react';
 
 function DisqusForm() {
-    const disqusShortname = 'Rustic';
+    const disqusShortname = 'goonzerflow';
 
     const disqusConfig = {
-        url: 'https://rustic-1.disqus.com/',
+        url: 'https://goonzerflow.disqus.com/',
         identifier: '123',
-        title: 'rustic-post',
+        title: 'goonzerflow-post',
     };
     return (
         <div className='disqus-form-area pt-[60px]'>

@@ -1,6 +1,6 @@
 ---
-title: 'Local & State Compliance Experts'
-icon: 'TbBuildingFactory'
+title: "Strategy Guides"
+icon: "TbBuildingFactory"
 ---
 
-Centralizes Ticket Management
+Bankroll management, volatility math, and game selection strategies that work.

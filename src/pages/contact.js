@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
-import HeaderThree from '../components/header/header-3';
 import GoogleMap from '../components/contact/google-map';
 import ContactForm from '../components/contact/contact-form';
 import Banner from '../components/banners/title-banner-contact';
@@ -13,10 +12,9 @@ function ContactPage(props) {
     return (
         <Fragment>
             <Head>
-                <title>Contact Us</title>
-                <meta name='description' content='Send us your messages!' />
+                <title>Contact — Goonzerflow</title>
+                <meta name='description' content='Get in touch with the Goonzerflow team.' />
             </Head>
-            <HeaderThree />
             <ContactUsBanner />
             <ContactUsBannerOne />
             <Banner />

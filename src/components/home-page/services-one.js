@@ -1,50 +1,54 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import * as AiIcons from 'react-icons/ai';
+import GoldCTA from '../ui/GoldCTA';
 
 function ServicesOne({ features }) {
   return (
-    <div className="service-area relative pt-[40px] md:pt-[115px] before:absolute before:h-[336px] before:w-[336px] before:top-[170px]">
+    <div className="olympus-sky" style={{ paddingTop: 'var(--space-3xl)', paddingBottom: 'var(--space-3xl)' }}>
       <div className="custom-container">
-        <div className="lg:grid lg:grid-cols-12 flex flex-col-reverse items-stretch">
-          {/* Text Left, Image Right */}
-          <div className="lg:col-span-12 flex flex-col lg:flex-row items-stretch gap-6">
-            {/* Text */}
-            <div className="lg:w-1/2 w-full flex flex-col justify-center pr-0 lg:pr-4 px-2">
-              <div className="service-content w-full max-w-[490px] mx-auto">
-                <h2 className="text-[32px] md:text-[56px] font-bold text-[#13144D] mb-[20px] md:mb-[30px] leading-snug text-center lg:text-left">
-                  Schedule a Demo of SmartTIX
-                </h2>
-                <p className="text-[16px] md:text-[24px] font-poppins mb-[20px] md:mb-[30px] leading-relaxed text-center lg:text-left text-[#30373E]">
-                  Connect with our ticket management experts for a demo of the SmartTIX platform today.
-                </p>
-                <div className="flex justify-center lg:justify-start">
-                  <Link
-                    href="/demo"
-                    className="boxed-btn text-[16px] md:text-[18px] leading-[33px] py-2 px-4 font-poppins font-bold">
-                    
-                      Schedule a demo &gt;
-                    
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Image */}
-            <div className="lg:w-1/2 w-full flex justify-center items-center px-2">
-              <div className="w-full max-w-[500px]">
-                <Image
-                  src="/images/service/Multiple Device Screenshots_updated[13].png"
-                  alt="Service Image"
-                  quality={70}
-                  width={500}
-                  height={500}
-                  objectFit="cover"
-                  className="w-full h-auto rounded-lg"
-                  priority
-                />
-              </div>
-            </div>
+        <div className="max-w-2xl mx-auto text-center">
+          <p
+            className="gold-text mb-4"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-small)',
+              fontWeight: 600,
+              letterSpacing: 'var(--tracking-caps)',
+              textTransform: 'uppercase',
+            }}
+          >
+            Get Started
+          </p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(1.75rem, 4vw, 3rem)',
+              fontWeight: 700,
+              letterSpacing: 'var(--tracking-display)',
+              color: 'var(--marble-white)',
+              marginBottom: 'var(--space-md)',
+              lineHeight: 'var(--leading-display)',
+            }}
+          >
+            Explore Our Slot & Casino Analysis
+          </h2>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--text-body-lg)',
+              color: 'var(--marble-warm)',
+              marginBottom: 'var(--space-xl)',
+              lineHeight: 'var(--leading-body)',
+            }}
+          >
+            Browse RTP-verified reviews, compare casinos side-by-side, and find the games worth your bankroll.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <GoldCTA href="/posts" variant="cta">
+              Browse All Reviews
+            </GoldCTA>
+            <GoldCTA href="/about" variant="ghost">
+              How We Rate &rarr;
+            </GoldCTA>
           </div>
         </div>
       </div>

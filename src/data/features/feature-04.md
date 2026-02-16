@@ -1,4 +1,4 @@
 ---
-title: "Smart Prompts"
+title: "Session Tracker"
 icon: "LuMessagesSquare"
 ---

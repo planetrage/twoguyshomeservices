@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import HeaderOne from "../../components/header/header-1";
 import BlogContent from "../../components/content-types/blog/blog-content";
 import SeoHead from "../../components/seo/seo-head";
 import SchemaMarkup from "../../components/seo/schema-markup";
@@ -10,7 +9,6 @@ function BlogDetailPage({ post }) {
     <Fragment>
       <SeoHead item={post} />
       <SchemaMarkup item={post} schemaType="BlogPosting" />
-      <HeaderOne />
       <BlogContent post={post} />
     </Fragment>
   );

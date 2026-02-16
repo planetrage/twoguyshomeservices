@@ -1,4 +1,4 @@
 ---
-title: "Exact-Match Photo Function"
+title: "Bonus Calculator"
 icon: "RiCamera2Line"
 ---

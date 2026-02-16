@@ -1,8 +1,8 @@
 ---
 quote: 'AiFillLinkedin'
 authorName: Juwanna Mann
-URLSource: 'https://www.linkedin.com/company/smarttixplatform/posts/?feedView=all&viewAsMember=true'
+URLSource: 'https://www.linkedin.com/company/goonzerflow'
 URLPlatform: 'youtube'
-authorOccupation: / Director at Chobham Manor
-excerpt: 
+authorOccupation: / Slot Strategy Expert
+excerpt:
 ---

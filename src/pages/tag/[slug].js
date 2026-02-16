@@ -1,6 +1,5 @@
 import { getAllItems } from '../../lib/items-util';
 import Breadcrumb from '../../components/breadcrumb';
-import HeaderTwo from '../../components/header/header-2';
 
 import AllItems from '../../components/posts/all-items';
 import { Fragment } from 'react';
@@ -13,10 +12,9 @@ const popularTagPage = ({ posts, tags, categories }) => {
         <Fragment>
             <Head>
                 <title>Popular Tags</title>
-                <meta name='description' content='Rustic posts!' />
+                <meta name='description' content='Slot reviews by tag.' />
             </Head>
-            <HeaderTwo />
-            <Breadcrumb activePage={'Posts'} pageTitle={'Our Posts'} />
+            <Breadcrumb activePage={'Slots'} pageTitle={'Slot Reviews'} />
             <AllItems posts={posts} categories={categories} tags={tags} />
         </Fragment>
     );

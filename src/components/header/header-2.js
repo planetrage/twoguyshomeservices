@@ -75,7 +75,7 @@ function HeaderTwo() {
                                     >
                                         <Link href='/posts'>
 
-                                            <span>News & Events</span>
+                                            <span>Slots</span>
 
                                         </Link>
                                     </li>
@@ -99,9 +99,9 @@ function HeaderTwo() {
                                                 : ''
                                         }
                                     >
-                                        <Link href='https://dev.mysmarttix.com'>
+                                        <Link href='/login'>
 
-                                            <span className='text-[#6AEF5B]'>User Login</span>
+                                            <span className='text-[#D4B85A]'>User Login</span>
 
                                         </Link>
                                     </li>
@@ -114,7 +114,7 @@ function HeaderTwo() {
                                     >
                                         <Link href='/demo'>
 
-                                            <span className='text-[#6AEF5B]'>Schedule a Demo</span>
+                                            <span className='text-[#D4B85A]'>Schedule a Demo</span>
 
                                         </Link>
                                     </li>

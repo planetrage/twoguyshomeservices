@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
-import HeaderThree from '../components/header/header-3';
 import DemoForm from '../components/demo/demo-form';
 import DemoBanner from '../components/banners/demo-banner';
 import DemoBannerOne from '../components/banners/demo-banner-one';
@@ -10,10 +9,9 @@ function DemoPage(props) {
     return (
         <Fragment>
             <Head>
-                <title>Schedule a demo</title>
-                <meta name='description' content='Send us your messages!' />
+                <title>Get Started — Goonzerflow</title>
+                <meta name='description' content='See how Goonzerflow can help you find the best slots and casinos.' />
             </Head>
-            <HeaderThree />
             <DemoBanner />
             <DemoBannerOne />
             <DemoForm />

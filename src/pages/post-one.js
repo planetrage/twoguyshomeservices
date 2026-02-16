@@ -4,15 +4,13 @@ import Banner from '../components/banners/title-banner-posts';
 import BannerOne from '../components/banners/posts-banner-two';
 import Services from '../components/home-page/services-one-bgAzure';
 import { getAllItems, getFeaturedItems } from '../lib/items-util';
-import HeaderThree from '../components/header/header-3';
 
 function PostOne(props) {
     return (
         <Fragment>
             <Head>
-                <title>Meet At the CGA</title>
+                <title>Best High RTP Slots 2025 — Goonzerflow</title>
             </Head>
-            <HeaderThree />
             <Banner />
             <BannerOne />
             <Services services={props.services} />

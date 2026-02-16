@@ -1,6 +1,6 @@
 ---
-title: 'Fast Turnarounds, Detailed Work'
-icon: 'MdSupportAgent'
+title: "Comparison Tools"
+icon: "MdSupportAgent"
 ---
 
-Automates ticket distribution and tracking
+Side-by-side slot and casino comparisons. Sort by RTP, volatility, max win.

@@ -1,6 +1,6 @@
 ---
-title: "Permitting Specialists"
+title: "Slot Reviews"
 icon: "TiLocationOutline"
 ---
 
-Streamlines ticket processing and reduces response times
+RTP-verified analysis of every slot worth playing. No filler, no hype — just data.

@@ -4,7 +4,7 @@ import Image from 'next/image';
 function ProjectItem(props) {
     const { title, category, excerpt, image, slug } = props.project;
 
-    const imagePath = `/images/projects/${slug}/${image}`;
+    const imagePath = image && image.startsWith('/') ? image : `/images/projects/${slug}/${image}`;
     const linkPath = `/projects/${slug}`;
 
     return (

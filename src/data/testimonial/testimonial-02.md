@@ -1,7 +1,7 @@
 ---
 quote: 'AiFillLinkedin'
 authorName: 'Don Henley'
-URLSource: 'https://www.linkedin.com/company/smarttixplatform/posts/?feedView=all&viewAsMember=true'
+URLSource: 'https://www.linkedin.com/company/goonzerflow'
 URLPlatform: 'LinkedIn'
 authorOccupation: / Director at Spotify
 excerpt: 

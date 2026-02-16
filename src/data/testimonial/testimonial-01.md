@@ -1,9 +1,9 @@
 ---
 quote: 'AiFillLinkedin'
 authorName: 'Ryan Betthalyn'
-URLSource: 'https://www.linkedin.com/company/smarttixplatform/posts/?feedView=all&viewAsMember=true'
+URLSource: 'https://www.linkedin.com/company/goonzerflow'
 URLPlatform: 'facebook'
-authorOccupation: / Director at Chobham Manor
+authorOccupation: / Gaming Analyst
 excerpt:
 image: '/images/testimonial/linkedin.png'
 ---

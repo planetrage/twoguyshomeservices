@@ -7,7 +7,7 @@ function ReviewBanner({ item }) {
   const imagePath = item.image || "";
 
   return (
-    <div className="relative bg-[#13144D] mt-[60px] md:mt-[100px]">
+    <div className="relative mt-[60px] md:mt-[100px]" style={{ background: 'var(--olympus-navy)' }}>
       {imagePath && (
         <div className="absolute inset-0 z-0">
           <img

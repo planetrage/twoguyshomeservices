@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
-import HeaderThree from '../components/header/header-3';
 import Banner from '../components/banners/title-banner-login';
 import BannerOne from '../components/banners/login-banner';
 import { getAllItems, getFeaturedItems } from '../lib/items-util';
@@ -9,9 +8,8 @@ function Login(props) {
     return (
         <Fragment>
             <Head>
-                <title>Privacy Policy</title>
+                <title>Login — Goonzerflow</title>
             </Head>
-            <HeaderThree />
             <Banner />
             <BannerOne bannerItems={props.bannerItems} />
         </Fragment>

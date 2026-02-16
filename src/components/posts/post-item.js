@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { SlClock } from "react-icons/sl";
 
 function PostItem(props) {
     const { title, image, date, slug } = props.posts;
@@ -10,17 +9,14 @@ function PostItem(props) {
         month: 'numeric',
         year: 'numeric',
     });
-    
-    const imagePath = `/images/posts/${image}`;
-    const linkPath = `/pages/${slug}`;
 
-    //console.log(linkPath);
+    const imagePath = image && image.startsWith('/') ? image : `/images/posts/${image}`;
+    const linkPath = `/posts/${slug}`;
 
     return (
-        <div className='post-item rounded-lg'>
-            <Link href={linkPath}>
-
-                <div className='post-img block'>
+        <div className='olympus-card' style={{ padding: 0, overflow: 'hidden' }}>
+            <Link href={linkPath} style={{ textDecoration: 'none' }}>
+                <div className='block overflow-hidden'>
                     <Image
                         src={imagePath}
                         alt={title}
@@ -31,29 +27,24 @@ function PostItem(props) {
                         priority
                     />
                 </div>
-                <div className='post-content'>
-                    {/*<span>test</span>
-                    <span>test2</span>
-                    <span>test3</span>
-                    <div className='grid grid-cols-2'>
-                        <span className='text-[14px] leading-6 mt-2 grid grid-cols-2 w-full'>
-                            <span className='p-1 text-primary w-1/4'><SlClock /></span>                                
-                            <span className='p-1 w-3/4'>{formattedDate}</span>
-                        </span>
-                        <span className='text-[14px] leading-6 block mt-2 w-3/4'>
-                            <span className='p-1 w-full border-l'>
-                                News & Events
-                            </span>
-                        </span>
-                    </div>*/}
-                    <h2 className='text-[24px] leading-[34px] mt-6 transition duration-300 hover:text-[#cbaf71] hover:underline'>
+                <div style={{ padding: 'var(--space-lg)' }}>
+                    <h2
+                        className='transition duration-300'
+                        style={{
+                            fontFamily: 'var(--font-display)',
+                            fontSize: 'var(--text-subsection)',
+                            fontWeight: 600,
+                            letterSpacing: 'var(--tracking-display)',
+                            color: 'var(--marble-white)',
+                            lineHeight: 'var(--leading-display)',
+                        }}
+                    >
                         {title}
                     </h2>
-                    <div className='text-[14px] leading-6 text-[#222] block mt-2'>
+                    <div className='mt-2' style={{ fontSize: 'var(--text-small)', color: 'var(--gold-primary)' }}>
                          Read More &gt;
                     </div>
                 </div>
-
             </Link>
         </div>
     );

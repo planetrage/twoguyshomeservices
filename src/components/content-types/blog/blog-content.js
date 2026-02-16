@@ -19,7 +19,7 @@ function BlogContent(props) {
                 />
             ) : (
                 <div className="post-banner relative">
-                    <div className="relative w-full lg:h-[400px] h-[250px] bg-gradient-to-r from-[#13144D] to-[#22C763]" />
+                    <div className="relative w-full lg:h-[400px] h-[250px] olympus-sky" />
                     <div className="container">
                         <div className="content absolute top-1/2 transform -translate-y-1/2 z-[1]">
                             <div className="inner-content relative z-[1]">

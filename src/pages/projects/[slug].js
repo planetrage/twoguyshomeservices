@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Fragment } from "react";
-import HeaderOne from "../../components/header/header-1";
 import ProjectContent from "../../components/projects/project-detail/project-content";
 import { getAllItems, getItemData, getItemsFiles } from "../../lib/items-util";
 
@@ -14,7 +13,6 @@ function ProjectDetailPage(props) {
         <title>{props.project.title}</title>
         <meta name="description" content={props.project.excerpt} />
       </Head>
-      <HeaderOne />
       <ProjectContent project={props.project} />
       <div className="project-area md:pt-[145px] pt-[45px] md:pb-160 pb-[60px]">
         <div className="container">
@@ -24,21 +22,21 @@ function ProjectDetailPage(props) {
           <form className="project-form border-[#595959] border-opacity-30 border lm:p-[60px] p-[20px]">
             <div className="md:flex">
               <input
-                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-black focus-visible:outline-0 focus-visible:border-primary py-[15px] mr-[20px]"
+                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-[#F2EDE8] focus-visible:outline-0 focus-visible:border-primary py-[15px] mr-[20px]"
                 placeholder="Full Name"
                 type="text"
                 id="name"
                 required
               />
               <input
-                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-black focus-visible:outline-0 focus-visible:border-primary py-[15px] mr-[20px]"
+                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-[#F2EDE8] focus-visible:outline-0 focus-visible:border-primary py-[15px] mr-[20px]"
                 placeholder="Email Address"
                 type="email"
                 id="email"
                 required
               />
               <input
-                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-black focus-visible:outline-0 focus-visible:border-primary py-[15px]"
+                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-[#F2EDE8] focus-visible:outline-0 focus-visible:border-primary py-[15px]"
                 placeholder="Your Phone Number"
                 type="text"
                 id="phone"
@@ -47,7 +45,7 @@ function ProjectDetailPage(props) {
             </div>
             <div>
               <textarea
-                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-black focus-visible:outline-0 focus-visible:border-primary py-[15px] mt-[35px]"
+                className="w-full border-[#595959] border-opacity-40 border-b focus-visible:placeholder:text-[#F2EDE8] focus-visible:outline-0 focus-visible:border-primary py-[15px] mt-[35px]"
                 placeholder="Here goes your message"
                 id="message"
                 rows="6"
@@ -55,7 +53,7 @@ function ProjectDetailPage(props) {
               ></textarea>
             </div>
             <div className="mt-[55px]">
-              <button className="boxed-btn text-[14px] leading-[30px]">
+              <button className="btn-gold-cta text-[14px] leading-[30px]">
                 Send Message
               </button>
             </div>
@@ -73,9 +71,7 @@ function ProjectDetailPage(props) {
                   : "text-white"
               }`}
               style={{
-                backgroundImage: `url('/images/projects/${
-                  prevProject?.slug + "/" + prevProject?.image
-                }')`,
+                backgroundImage: prevProject?.image?.startsWith('/') ? `url('${prevProject.image}')` : `url('/images/projects/${prevProject?.slug + "/" + prevProject?.image}')`,
               }}>
               
                 Prev
@@ -89,9 +85,7 @@ function ProjectDetailPage(props) {
                   : "text-white"
               }`}
               style={{
-                backgroundImage: `url('/images/projects/${
-                  nextProject?.slug + "/" + nextProject?.image
-                }')`,
+                backgroundImage: nextProject?.image?.startsWith('/') ? `url('${nextProject.image}')` : `url('/images/projects/${nextProject?.slug + "/" + nextProject?.image}')`,
               }}>
               
                 Next

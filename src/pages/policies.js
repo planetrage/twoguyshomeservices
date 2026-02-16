@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
-import HeaderThree from '../components/header/header-3';
 import Banner from '../components/banners/title-banner-privacy';
 import BannerOne from '../components/banners/privacy-banner';
 import { getAllItems, getFeaturedItems } from '../lib/items-util';
@@ -9,9 +8,8 @@ function Terms(props) {
     return (
         <Fragment>
             <Head>
-                <title>Privacy Policy</title>
+                <title>Privacy Policy — Goonzerflow</title>
             </Head>
-            <HeaderThree />
             <Banner />
             <BannerOne bannerItems={props.bannerItems} />
         </Fragment>

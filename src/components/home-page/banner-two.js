@@ -1,35 +1,35 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import { useState, useEffect, useRef } from 'react';
-import 'swiper/swiper-bundle.css';
-import * as AiIcons from 'react-icons/ai';
-import * as FaIcons from 'react-icons/fa';
-
-SwiperCore.use([Navigation, Pagination, Autoplay]);
 function Banner({ bannerItems }) {
-    const [swiper, setSwiper] = useState();
-    const prevRef = useRef();
-    const nextRef = useRef();
-
-    useEffect(() => {
-        if (swiper) {
-            console.log('Swiper instance:', swiper);
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-        }
-    }, [swiper]);
-    return (
-        <div className='testimonial-area bg-azure'>
-            <div className='container'>
-                <div className='grid-cols-1'>
-                    <p>Maximize Productivity with a Purpose-Built Ticket Management System</p>
-                    <p>SmartTix is the most advanced, easy-to-use ticket management platform purpose-built to support the needs of a wide range of industries and organizations.  Our user-friendly interface and automated features make it simple to handle required tasks, while providing opportunities to increase operational efficiency through versatile intercommunication tools and enhanced routing, reporting, and auditing capabilities.</p>
-                </div>
-            </div>
+  return (
+    <div style={{ background: 'var(--olympus-navy)', paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
+      <div className="custom-container">
+        <div className="max-w-4xl mx-auto text-center">
+          <p
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--tracking-display)',
+              color: 'var(--marble-white)',
+              marginBottom: 'var(--space-md)',
+              lineHeight: 'var(--leading-display)',
+            }}
+          >
+            Maximize Value with a Data-Driven Approach
+          </p>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--text-body-lg)',
+              color: 'var(--marble-warm)',
+              lineHeight: 'var(--leading-body)',
+            }}
+          >
+            Goonzerflow is the most comprehensive slot analytics platform built for players who want verified RTP data, honest casino reviews, and mathematical analysis of every game worth playing.
+          </p>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Banner;

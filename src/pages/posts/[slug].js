@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import HeaderOne from "../../components/header/header-1";
 import { getAllItems, getItemData, getItemsFiles } from "../../lib/items-util";
 import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostCategories } from "../../lib/getPostCategories";
@@ -17,7 +16,6 @@ function PostDetailPage(props) {
         <title>{props.post.title}</title>
         <meta name="description" content={props.post.excerpt} />
       </Head>
-      <HeaderOne />
       <PostContent
         post={props.post}
         categories={props.categories}

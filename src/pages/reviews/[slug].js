@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import HeaderOne from "../../components/header/header-1";
 import ReviewContent from "../../components/content-types/review/review-content";
 import SeoHead from "../../components/seo/seo-head";
 import SchemaMarkup from "../../components/seo/schema-markup";
@@ -14,7 +13,6 @@ function ReviewDetailPage({ review }) {
         schemaType="Review"
         offers={review.offers}
       />
-      <HeaderOne />
       <ReviewContent review={review} />
     </Fragment>
   );

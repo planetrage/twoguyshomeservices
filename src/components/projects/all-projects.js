@@ -19,30 +19,30 @@ function AllProjects(props) {
     return (
         <Fragment>
             <div className='container'>
-                <div className='filter-tab flex xl:justify-end flex-wrap text-[#30373E] uppercase md:pb-155 pb-[55px] max-lg:pt-[55px]'>
+                <div className='filter-tab flex xl:justify-end flex-wrap uppercase md:pb-155 pb-[55px] max-lg:pt-[55px]' style={{ color: 'var(--marble-warm)' }}>
                     <button onClick={onFilterHandler} data-filter='all'>
                         All
                     </button>
                     <button
                         onClick={onFilterHandler}
                         className='ml-10'
-                        data-filter='residenital'
+                        data-filter='calculators'
                     >
-                        Residenital
+                        Calculators
                     </button>
                     <button
                         onClick={onFilterHandler}
                         className='ml-10'
-                        data-filter='commercial'
+                        data-filter='comparison'
                     >
-                        Commercial
+                        Comparison
                     </button>
                     <button
                         onClick={onFilterHandler}
                         className='sm:ml-10 fixed-xs:mt-[10px]'
-                        data-filter='suitanable-space'
+                        data-filter='analysis'
                     >
-                        Suitantable Space
+                        Analysis
                     </button>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 ---
 quote: 'AiFillLinkedin'
 authorName: But Daddiihearthim
-URLSource: 'https://www.linkedin.com/company/smarttixplatform/posts/?feedView=all&viewAsMember=true'
+URLSource: 'https://www.linkedin.com/company/goonzerflow'
 URLPlatform: 'twitter'
-authorOccupation: / Director at Chobham Manor
-excerpt: 
+authorOccupation: / Casino Operations Lead
+excerpt:
 image: '/images/testimonial/linkedin-three.png'
 ---

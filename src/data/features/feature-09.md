@@ -1,4 +1,4 @@
 ---
-title: "Alerts and Notifications"
+title: "Price Alerts"
 icon: "TbAlertTriangle"
 ---

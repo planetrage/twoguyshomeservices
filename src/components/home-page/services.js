@@ -1,87 +1,120 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import * as AiIcons from 'react-icons/ai';
-import * as MdIcons from 'react-icons/md';
-import * as PiIcons from 'react-icons/pi';
-import * as TiIcons from 'react-icons/ti';
-import * as TbIcons from 'react-icons/tb';
-import * as RiIcons from 'react-icons/ri';
+import LightningDivider from '../ui/LightningDivider';
 
-const ICON_LIBRARIES = {
-  Ai: AiIcons,
-  Md: MdIcons,
-  Pi: PiIcons,
-  Ti: TiIcons,
-  Tb: TbIcons,
-  Ri: RiIcons,
-};
+const CATEGORIES = [
+  {
+    title: 'Slot Reviews',
+    desc: 'RTP-verified analysis of every slot worth playing. No filler, no hype — just data.',
+    href: '/posts',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="M7 8v8M12 8v8M17 8v8" />
+        <path d="M2 12h20" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Casino Reviews',
+    desc: 'Trust scores, withdrawal speeds, bonus terms — the data casinos don\'t advertise.',
+    href: '/reviews',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 21h18M5 21V7l7-4 7 4v14" />
+        <path d="M9 21v-4h6v4M9 9h1M14 9h1M9 13h1M14 13h1" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Strategy Guides',
+    desc: 'Bankroll management, volatility math, and game selection strategies that work.',
+    href: '/blog',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+        <path d="M8 7h8M8 11h6" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Comparison Tools',
+    desc: 'Side-by-side slot and casino comparisons. Sort by RTP, volatility, max win.',
+    href: '/projects',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 20V10M12 20V4M6 20v-6" />
+      </svg>
+    ),
+  },
+];
 
-function Services({ services }) {
+function Services() {
   return (
-    <div className="service-area relative pt-[35px] bg-[#F4F5F7] before:absolute before:h-[336px] before:w-[336px] before:top-[170px] before:left-[-168px]">
+    <section style={{ background: 'var(--olympus-navy)', paddingTop: 'var(--space-3xl)', paddingBottom: 'var(--space-3xl)' }}>
       <div className="custom-container">
-        <div className="lg:grid lg:grid-cols-12 flex flex-col">
-          {/* Top Row: Image + Text */}
-          <div className="lg:col-span-12 flex flex-col lg:flex-row items-stretch">
-            {/* Left (Image) */}
-            <div className="lg:w-1/2 w-full flex items-center justify-center mb-8 lg:mb-0">
-              <div className="w-full max-w-[572px]">
-                <Image
-                  src="/images/service/Hardhat_guy_homepage[54].png"
-                  alt="Service Image"
-                  quality={70}
-                  width={572}
-                  height={555}
-                  objectFit="cover"
-                  className="rounded-lg w-full h-auto"
-                  priority
-                />
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <p
+            className="gold-text mb-4"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-small)',
+              fontWeight: 600,
+              letterSpacing: 'var(--tracking-caps)',
+              textTransform: 'uppercase',
+            }}
+          >
+            Explore by Category
+          </p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-section)',
+              fontWeight: 600,
+              letterSpacing: 'var(--tracking-display)',
+              color: 'var(--marble-white)',
+            }}
+          >
+            Everything You Need to Play Smarter
+          </h2>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {CATEGORIES.map(({ title, desc, href, icon }) => (
+            <a
+              key={title}
+              href={href}
+              className="olympus-card group"
+              style={{ textDecoration: 'none', display: 'block' }}
+            >
+              <div style={{ color: 'var(--gold-primary)', marginBottom: 'var(--space-md)' }}>
+                {icon}
               </div>
-            </div>
-
-            {/* Right (Text) */}
-            <div className="lg:w-1/2 w-full flex flex-col justify-center px-2">
-              <div className="w-full max-w-[600px] mx-auto">
-                <h2 className="text-[32px] md:text-[56px] md:leading-[64px] text-[#13144D] mb-[30px] mt-[20px] text-center lg:text-left">
-                  Delivering timely,<br /> compliant,<br /> and cost-effective solutions<br /> for water management
-                </h2>
-                <span className="text-[16px] md:text-[24px] leading-6 md:leading-[32px] mb-[35px] block font-poppins text-center lg:text-left text-[#30373E]">
-                  From concept to clearance, we help you move confidently through complex regulatory landscapes.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Services Grid */}
-          <div className="lg:col-span-12 pt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[25px] w-full">
-              {services?.map((service, index) => {
-                const iconName = service?.icon;
-                const prefix = iconName?.substring(0, 2);
-                const IconLibrary = ICON_LIBRARIES[prefix];
-                const Icon = IconLibrary ? IconLibrary[iconName] : null;
-
-                return (
-                  <div className="service-box w-full" key={service?.title || index}>
-                    <div className="service-box-inner">
-                      <div className="service-list flex items-start">
-                        <div className="icon text-[#22C763] text-[32px] mr-3">
-                          {Icon && <Icon />}
-                        </div>
-                        <div className="content">
-                          <h3 className="title">{service?.title}</h3>
-                          <p className="desc">{service?.content}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'var(--text-subsection)',
+                  fontWeight: 600,
+                  letterSpacing: 'var(--tracking-display)',
+                  color: 'var(--marble-white)',
+                  marginBottom: 'var(--space-sm)',
+                }}
+              >
+                {title}
+              </h3>
+              <p style={{ fontSize: 'var(--text-small)', color: 'var(--marble-cool)', lineHeight: '1.6' }}>
+                {desc}
+              </p>
+            </a>
+          ))}
         </div>
       </div>
-    </div>
+
+      <div className="mt-16">
+        <LightningDivider />
+      </div>
+    </section>
   );
 }
 

@@ -1,0 +1,88 @@
+/* ============================================
+   Olympus Protocol — Design Tokens
+   All CSS variables from the Goonzerflow Design System
+   ============================================ */
+
+:root {
+  /* ---- Core Navy ---- */
+  --olympus-navy:        #0B1120;
+  --olympus-navy-light:  #141E33;
+  --olympus-navy-mid:    #1C2A45;
+
+  /* ---- Marble ---- */
+  --marble-white:        #F2EDE8;
+  --marble-warm:         #E8E0D6;
+  --marble-cool:         #D4CCC2;
+  --marble-deep:         #B8AFA5;
+
+  /* ---- Gold ---- */
+  --gold-primary:        #C9A84C;
+  --gold-light:          #E2C97E;
+  --gold-dark:           #9A7B2E;
+  --gold-muted:          #7A6530;
+  --gold-glow:           rgba(201, 168, 76, 0.15);
+
+  /* ---- Semantic ---- */
+  --risk-high:           #D94F4F;
+  --risk-medium:         #D9A34F;
+  --risk-low:            #4FAD6B;
+  --info-blue:           #4F8FD9;
+
+  /* ---- Lightning ---- */
+  --lightning-core:      #E8D5A0;
+  --lightning-edge:      #F5EED4;
+  --lightning-ambient:   rgba(232, 213, 160, 0.08);
+
+  /* ---- Typography ---- */
+  --font-display:  'Cinzel', 'Times New Roman', serif;
+  --font-body:     'Raleway', 'Helvetica Neue', sans-serif;
+  --font-data:     'DM Mono', 'Courier New', monospace;
+
+  /* Display sizes */
+  --text-hero:       clamp(2.5rem, 5vw, 4.5rem);
+  --text-page-title: clamp(2rem, 3.5vw, 3rem);
+  --text-section:    clamp(1.5rem, 2.5vw, 2rem);
+  --text-subsection: clamp(1.2rem, 2vw, 1.5rem);
+
+  /* Body sizes */
+  --text-body:       1rem;
+  --text-body-lg:    1.125rem;
+  --text-small:      0.875rem;
+  --text-tiny:       0.75rem;
+
+  /* Data sizes */
+  --text-stat:       clamp(1.5rem, 3vw, 2.5rem);
+  --text-table:      0.875rem;
+
+  /* Line Heights */
+  --leading-display: 1.15;
+  --leading-body:    1.65;
+  --leading-data:    1.4;
+
+  /* Letter Spacing */
+  --tracking-display: 0.04em;
+  --tracking-caps:    0.08em;
+  --tracking-body:    0.01em;
+
+  /* ---- Spacing ---- */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2.5rem;
+  --space-2xl:  4rem;
+  --space-3xl:  6rem;
+
+  /* Layout */
+  --content-max:    1200px;
+  --content-narrow: 800px;
+  --sidebar-width:  320px;
+  --card-radius:    8px;
+  --card-radius-lg: 12px;
+
+  /* Breakpoints (reference only, use in media queries) */
+  --bp-mobile:   480px;
+  --bp-tablet:   768px;
+  --bp-desktop:  1024px;
+  --bp-wide:     1440px;
+}

@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import * as MdIcons from "react-icons/md";
 import * as AiIcons from "react-icons/ai";
 import * as TbIcons from "react-icons/tb";
@@ -20,53 +18,57 @@ const ICON_LIBRARIES = {
 
 function ServicesTwo({ features }) {
   return (
-    <div className="service-area relative pt-[60px] md:pt-[160px] before:absolute before:h-[336px] before:w-[336px] before:top-[170px] before:left-[-168px] bg-azure">
-      <div className="custom-container pb-12">
-        <div className="lg:grid lg:grid-cols-12 flex flex-col">
-          {/* Heading */}
-          <div className="lg:col-span-12 flex flex-col items-center justify-center">
-            <div className="w-full">
-              <h1 className="text-[28px] md:text-[56px] leading-snug md:leading-[70px] font-bold text-[#13144D] mb-[40px] md:mb-[60px] text-center">
-                Work Smarter with Features that<br />
-                Optimize Efforts & Automate Tasks
-              </h1>
-            </div>
-          </div>
+    <div className="olympus-sky" style={{ paddingTop: 'var(--space-3xl)', paddingBottom: 'var(--space-2xl)' }}>
+      <div className="custom-container">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h1
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(1.75rem, 4vw, 3.5rem)',
+              fontWeight: 700,
+              letterSpacing: 'var(--tracking-display)',
+              color: 'var(--marble-white)',
+              lineHeight: 'var(--leading-display)',
+            }}
+          >
+            Tools & Features that<br />
+            Help You Play Smarter
+          </h1>
+        </div>
 
-          {/* Feature Cards Grid */}
-          <div className="lg:col-span-12 pt-6 md:pt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[25px] w-full">
-              {features?.map((feature, index) => {
-                const iconName = feature?.icon;
-                const prefix = iconName?.substring(0, 2);
-                const IconLibrary = ICON_LIBRARIES[prefix];
-                const Icon = IconLibrary ? IconLibrary[iconName] : null;
+        {/* Feature Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features?.map((feature, index) => {
+            const iconName = feature?.icon;
+            const prefix = iconName?.substring(0, 2);
+            const IconLibrary = ICON_LIBRARIES[prefix];
+            const Icon = IconLibrary ? IconLibrary[iconName] : null;
 
-                return (
-                  <div className="service-box2 w-full group" key={feature?.title || index}>
-                    <div className="service-box-inner2">
-                      <div className="service-list grid grid-cols-3 items-center gap-2 p-3">
-                        <div className="col-span-2 content">
-                          <h3 className="title font-poppins text-[18px] md:text-[26px] text-black group-hover:text-[#3754ED] transition duration-300">
-                            {feature?.title}
-                          </h3>
-                        </div>
-                        <div className="col-span-1 icon flex items-center justify-end">
-                          {Icon && (
-                            <Icon
-                              className={`text-[#22C763] group-hover:text-[#3754ED] transition duration-300 text-2xl md:text-3xl ${
-                                index === 0 ? 'rotate-90' : ''
-                              }`}
-                            />
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+            return (
+              <div className="olympus-card group" key={feature?.title || index}>
+                <div className="flex items-center justify-between gap-2">
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'var(--text-body-lg)',
+                      fontWeight: 600,
+                      letterSpacing: 'var(--tracking-display)',
+                      color: 'var(--marble-white)',
+                    }}
+                  >
+                    {feature?.title}
+                  </h3>
+                  {Icon && (
+                    <Icon
+                      className="text-2xl md:text-3xl transition duration-300"
+                      style={{ color: 'var(--gold-primary)' }}
+                    />
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

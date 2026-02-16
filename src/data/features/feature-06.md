@@ -1,4 +1,4 @@
 ---
-title: "Robust Reporting"
+title: "Casino Rankings"
 icon: "MdAddChart"
 ---

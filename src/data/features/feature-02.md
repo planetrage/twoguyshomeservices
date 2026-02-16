@@ -1,4 +1,4 @@
 ---
-title: "Advanced Communication Tools"
+title: "Volatility Analysis"
 icon: "MdAdsClick"
 ---

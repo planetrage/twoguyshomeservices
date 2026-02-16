@@ -1,21 +1,21 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 function DarkLogo() {
   return (
     <Link
       href="/"
-      className="inline-block leading-[1] align-middle w-auto max-w-[140px]">
-
-      <Image
-        src="/images/logo/logo.png"
-        alt="SmartTIX Dark Logo"
-        width={140}
-        height={140}
-        priority
-        style={{ maxWidth: '100%', height: 'auto' }}
-      />
-
+      className="inline-block leading-[1] align-middle"
+      style={{
+        fontFamily: 'var(--font-display)',
+        fontWeight: 600,
+        fontSize: '1.25rem',
+        letterSpacing: 'var(--tracking-caps)',
+        color: 'var(--marble-white)',
+        textTransform: 'uppercase',
+        textDecoration: 'none',
+      }}
+    >
+      GOONZERFLOW
     </Link>
   );
 }

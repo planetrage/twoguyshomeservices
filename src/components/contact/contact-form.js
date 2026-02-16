@@ -26,7 +26,7 @@ function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      await axios.post('https://notifications.smarttix.com/verify-contact', {
+      await axios.post('/api/contact', {
         to: formData.email,
         subject: `New inquiry from ${formData.fname} ${formData.lname}`,
         text: `Company: ${formData.org}\nPhone: ${formData.phone}\nMessage: ${formData.message}`,
@@ -41,19 +41,36 @@ function ContactForm() {
     }
   };
 
+  const inputClasses = "w-full border rounded-md px-4 py-3 focus:outline-none transition-colors";
+  const inputStyle = {
+    background: 'var(--olympus-navy)',
+    borderColor: 'rgba(201, 168, 76, 0.2)',
+    color: 'var(--marble-white)',
+  };
+
   return (
-    <div className="contact-area border-[#595959] border-opacity-30 bg-azure md:pt-[100px] pt-[45px] md:pb-[140px] pb-[60px]">
+    <div className="olympus-sky" style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-3xl)' }}>
       <ToastContainer />
-      <div className="custom-container rounded-lg px-4">
+      <div className="custom-container">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-[18px] md:text-[22px] font-semibold mb-8 text-center md:text-left pt-[35px]">
-            Submit a general or career inquiry below
+          <h2
+            className="mb-8 text-center md:text-left"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-subsection)',
+              fontWeight: 600,
+              letterSpacing: 'var(--tracking-display)',
+              color: 'var(--marble-white)',
+            }}
+          >
+            Send Us a Message
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="flex flex-col md:flex-row gap-4">
               <input
-                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-black"
+                className={inputClasses}
+                style={inputStyle}
                 placeholder="First Name"
                 type="text"
                 id="fname"
@@ -63,7 +80,8 @@ function ContactForm() {
                 required
               />
               <input
-                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-black"
+                className={inputClasses}
+                style={inputStyle}
                 placeholder="Last Name"
                 type="text"
                 id="lname"
@@ -75,7 +93,8 @@ function ContactForm() {
             </div>
 
             <input
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-black"
+              className={inputClasses}
+              style={inputStyle}
               placeholder="Company/Organization"
               type="text"
               id="org"
@@ -87,7 +106,8 @@ function ContactForm() {
 
             <div className="flex flex-col md:flex-row gap-4">
               <input
-                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-black"
+                className={inputClasses}
+                style={inputStyle}
                 placeholder="Email"
                 type="email"
                 id="email"
@@ -97,7 +117,8 @@ function ContactForm() {
                 required
               />
               <input
-                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-black"
+                className={inputClasses}
+                style={inputStyle}
                 placeholder="Phone"
                 type="tel"
                 id="phone"
@@ -109,7 +130,8 @@ function ContactForm() {
             </div>
 
             <textarea
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-black"
+              className={inputClasses}
+              style={inputStyle}
               placeholder="Message Inquiry"
               id="message"
               rows="6"
@@ -123,9 +145,8 @@ function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`bg-[#6AEF5B] text-[#13144D] px-6 py-3 text-[16px] font-bold rounded-md shadow transition flex items-center gap-2 ${
-                  isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#5adc4d]'
-                }`}
+                className="btn-gold-cta"
+                style={isSubmitting ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
               >
                 {isSubmitting ? 'Sending...' : 'Submit >'}
               </button>

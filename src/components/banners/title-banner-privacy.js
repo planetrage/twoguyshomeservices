@@ -1,17 +1,16 @@
-import { useState, useEffect, useRef } from 'react';
-import * as AiIcons from 'react-icons/ai';
-import * as FaIcons from 'react-icons/fa';
-
 function Banner() {
     return (
-        <div className='bg-gradient-to-r from-[#13144D] to-[#22C763] mt-[100px]'>
-            <div className='container pt-24 pb-24'>
-                <div className='grid grid-cols-1'>
-                    <p className="text-[52px] text-white md:mb-[30px] mb-[10px] font-bold text-left text-center">Privacy Policy</p>
-                </div>
-            </div>
+      <div className="olympus-sky" style={{ marginTop: 0 }}>
+        <div className="custom-container pt-[60px] pb-[60px] md:pt-24 md:pb-24">
+          <h1
+            className="text-[28px] md:text-[52px] font-bold text-left leading-snug"
+            style={{ color: 'var(--marble-white)', fontFamily: 'var(--font-display)', letterSpacing: 'var(--tracking-display)' }}
+          >
+            Privacy Policy
+          </h1>
         </div>
+      </div>
     );
-}
+  }
 
-export default Banner;
+  export default Banner;

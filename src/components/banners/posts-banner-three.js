@@ -13,8 +13,8 @@ function BannerTwo() {
                     <div className='grid grid-cols-2'>
                         <div className='grid grid-cols-1'>
                             <div className='grid grid-cols-2'>
-                                <p className="=text-black p-2 text-center"><FaClock /></p>
-                                <p className="=text-black p-2 text-center">Built for Us, by Us</p>
+                                <p className="=text-[#F2EDE8] p-2 text-center"><FaClock /></p>
+                                <p className="=text-[#F2EDE8] p-2 text-center">Built for Us, by Us</p>
                                 <div className='grid grid-cols-1'>
                                     <p className='w-full'>text</p>
                                 </div>
@@ -32,17 +32,17 @@ function BannerTwo() {
                                 priority
                             />
                         </div>
-                        {/*<p className="text-[26px] text-black md:mb-[15px] mb-[5px] text-center">
+                        {/*<p className="text-[26px] text-[#F2EDE8] md:mb-[15px] mb-[5px] text-center">
                             an image goes here
                         </p>*/}
                     </div>
                     <div className='grid grid-cols-1'>
-                        <p className="text-[26px] text-black md:mb-[15px] mb-[5px] text-center">
-                            Plans to purpose-build the system to meet the modern, real-time needs of on-site field technicians, as well as the requirements of managers and business owners to optimize and maximize operational efficiency, developed into an innovative solution for their industry.  SmartTix leverages leading-edge tech to advance utility locating ticket management, becoming the most cost-effective, time-saving ticket management solution on the market.
+                        <p className="text-[26px] text-[#F2EDE8] md:mb-[15px] mb-[5px] text-center">
+                            Plans to purpose-build the system to meet the modern, real-time needs of on-site casino floor analysts, as well as the requirements of managers and business owners to optimize and maximize operational efficiency, developed into an innovative solution for their industry.  Goonzerflow leverages leading-edge tech to advance casino slot performance management, becoming the most cost-effective, time-saving slot analytics solution on the market.
                         </p>
-                        <p className='border-b mt-2 pb-[2px] bg-[#22C763]'></p>
+                        <p className='border-b mt-2 pb-[2px] bg-[#C9A84C]'></p>
                     </div>
-                    <div className='grid grid-cols-1 bg-[#22C763]'>
+                    <div className='grid grid-cols-1 bg-[#C9A84C]'>
                         <p>asdf</p>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ function HeaderThree() {
               </div>
 
               {/* Desktop Nav */}
-              <div className="hidden lg:flex col-span-6 lg:col-span-10 justify-end items-center space-x-6 text-black font-bold">
+              <div className="hidden lg:flex col-span-6 lg:col-span-10 justify-end items-center space-x-6 text-[#F2EDE8] font-bold">
                 <Link href="/about" className="hover:underline">
                   About
                 </Link>
@@ -51,10 +51,10 @@ function HeaderThree() {
                   Contact Us
                 </Link>
                 {/*<Link href="/login">
-                  <a className="text-[#6AEF5B] hover:underline">User Log-in</a>
+                  <a className="text-[#D4B85A] hover:underline">User Log-in</a>
                 </Link>
                 <Link href="/demo">
-                  <a className="bg-[#6AEF5B] text-[#13144D] px-4 py-2 rounded-md hover:bg-[#5adc4d] transition">
+                  <a className="bg-[#D4B85A] text-[#0B1120] px-4 py-2 rounded-md hover:bg-[#C9A84C] transition">
                     Schedule a demo &gt;
                   </a>
                 </Link>*/}
@@ -66,7 +66,7 @@ function HeaderThree() {
                 <button
                     onClick={toggleOffcanvas}
                     aria-label="Toggle menu"
-                    className="p-2 bg-[#6AEF5B] rounded text-[#13144D] hover:bg-[#5adc4d] transition"
+                    className="p-2 bg-[#D4B85A] rounded text-[#0B1120] hover:bg-[#C9A84C] transition"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
@@ -90,7 +90,7 @@ function HeaderThree() {
         >
           <nav className="flex flex-col px-6 py-4 space-y-4">
             <Link href="/posts" onClick={toggleOffcanvas} className="hover:underline">
-              News & Events
+              Slots
             </Link>
             <Link href="/about" onClick={toggleOffcanvas} className="hover:underline">
               About
@@ -99,15 +99,15 @@ function HeaderThree() {
               Contact Us
             </Link>
             <Link
-              href="https://dev.mysmarttix.com"
+              href="/login"
               onClick={toggleOffcanvas}
-              className="text-[#6AEF5B] hover:underline">
+              className="text-[#D4B85A] hover:underline">
               User Log-in
             </Link>
             <Link
               href="/demo"
               onClick={toggleOffcanvas}
-              className="bg-[#6AEF5B] text-[#13144D] px-4 py-2 rounded-md hover:bg-[#5adc4d] transition text-center">
+              className="bg-[#D4B85A] text-[#0B1120] px-4 py-2 rounded-md hover:bg-[#C9A84C] transition text-center">
               
                 Schedule a demo &gt;
               

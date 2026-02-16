@@ -8,7 +8,7 @@ import { IoMdGrid } from 'react-icons/io';
 function ProjectContent(props) {
     const { project } = props;
 
-    const imagePath = `/images/projects/${project.slug}/${project.image}`;
+    const imagePath = project.image && project.image.startsWith('/') ? project.image : `/images/projects/${project.slug}/${project.image}`;
 
     const customRenderers = {
         p(paragraph) {
@@ -16,6 +16,7 @@ function ProjectContent(props) {
 
             if (node.children[0].tagName === 'img') {
                 const image = node.children[0];
+                const imgSrc = image.properties.src && image.properties.src.startsWith('/') ? image.properties.src : `/images/projects/${project.slug}/${image.properties.src}`;
 
                 return (
                     <Fragment>
@@ -26,42 +27,10 @@ function ProjectContent(props) {
                                         href='/projects'
                                         className='flex items-center text-[14px] leading-6 uppercase'>
 
-                                        <IoMdGrid className='text-[20px] mr-5' />Back to Projects
-                                                                                
+                                        <IoMdGrid className='text-[20px] mr-5' />Back to Tools
+
                                     </Link>
                                 </div>
-                                <ul className='info grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3'>
-                                    <li>
-                                        <span className='text-[#4D5660] mr-[5px]'>
-                                            Location:
-                                        </span>
-                                        {project?.location}
-                                    </li>
-                                    <li>
-                                        <span className='text-[#4D5660] mr-[5px]'>
-                                            Client:
-                                        </span>
-                                        {project?.clientName}
-                                    </li>
-                                    <li>
-                                        <span className='text-[#4D5660] mr-[5px]'>
-                                            Completed:
-                                        </span>
-                                        {project.completedDate}
-                                    </li>
-                                    <li>
-                                        <span className='text-[#4D5660] mr-[5px]'>
-                                            Architect:
-                                        </span>
-                                        {project.architectName}
-                                    </li>
-                                    <li>
-                                        <span className='text-[#4D5660] mr-[5px]'>
-                                            Area:
-                                        </span>
-                                        {project.squareUnits}
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         <div className='project-description md:pt-[80px] pt-[40px]'>
@@ -79,7 +48,7 @@ function ProjectContent(props) {
                                 </div>
                                 <div className='image md:pt-[85px] pt-[50px]'>
                                     <Image
-                                        src={`/images/projects/${project.slug}/${image.properties.src}`}
+                                        src={imgSrc}
                                         alt={image.alt}
                                         width={1170}
                                         height={610}

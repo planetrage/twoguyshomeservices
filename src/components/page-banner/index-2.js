@@ -5,16 +5,16 @@ function PageBannerTwo() {
                 <div className='grid grid-cols-12'>
                     <div className='col-span-2'>
                         <div className='year relative text-white'>
-                            <span>2022</span>
+                            <span>2025</span>
                         </div>
                     </div>
                     <div className='col-span-10'>
                         <div className='banner-content relative'>
                             <span className='text-[18px] leading-[29px] text-white uppercase max-w-[225px] block mb-[310px]'>
-                                Nordic interior studio
+                                Goonzerflow Analytics
                             </span>
                             <h2 className='text-[100px] leading-[110px] text-white max-w-[680px]'>
-                                Copper Brass & Rustic
+                                Data-Driven Gaming
                             </h2>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
 ---
-title: "Auto-Fill Reports"
+title: "Payout Reports"
 icon: "GoChecklist"
 ---
