@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import LightningDivider from '../ui/LightningDivider';
 import GoldCTA from '../ui/GoldCTA';
 
@@ -10,7 +9,8 @@ function Hero() {
         minHeight: '80vh',
         display: 'flex',
         alignItems: 'center',
-        backgroundImage: 'linear-gradient(rgba(11,17,32,0.6), rgba(11,17,32,0.6)), url(/images/hero/hero-temple-goldlight.png)',
+        backgroundImage:
+          'linear-gradient(rgba(11,17,32,0.72), rgba(11,17,32,0.72)), url(/images/hero/hero-temple-goldlight.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -28,7 +28,7 @@ function Hero() {
               textTransform: 'uppercase',
             }}
           >
-            <span className="gold-text">Structured Intelligence for Gaming</span>
+            <span className="gold-text">Updated February 2026</span>
           </p>
 
           {/* Headline */}
@@ -43,7 +43,7 @@ function Hero() {
               marginBottom: 'var(--space-lg)',
             }}
           >
-            Find the Slots<br />Worth Playing
+            Claim the Best Sweepstakes Casino Bonuses
           </h1>
 
           {/* Subhead */}
@@ -59,17 +59,32 @@ function Hero() {
               marginRight: 'auto',
             }}
           >
-            RTP-verified reviews. Data-driven guides. No hype.
+            Updated rankings. Verified offers. Structured analysis — not hype.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <GoldCTA href="/posts" variant="cta">
-              Explore Top Slots
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <GoldCTA href="/reviews" variant="cta">
+              Explore Top Bonuses
             </GoldCTA>
             <GoldCTA href="/about" variant="ghost">
-              How We Rate &rarr;
+              How We Rank &rarr;
             </GoldCTA>
+          </div>
+
+          {/* Trust Signals */}
+          <div
+            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--text-small)',
+              color: 'var(--marble-warm)',
+            }}
+          >
+            <span>&#10003; No purchase necessary</span>
+            <span>&#10003; 18+ only</span>
+            <span>&#10003; Updated Feb 2026</span>
+            <span>&#10003; Independent reviews</span>
           </div>
         </div>
       </div>
