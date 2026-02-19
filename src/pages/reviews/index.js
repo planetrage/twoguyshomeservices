@@ -2,70 +2,124 @@ import { Fragment } from "react";
 import Link from "next/link";
 import ReviewsBanner from "../../components/banners/reviews-banner";
 import SeoHead from "../../components/seo/seo-head";
-import { getAllItems } from "../../lib/items-util";
+import casinos from "../../data/casinos";
+import getAffiliateLink from "../../lib/getAffiliateLink";
 
-function ReviewsListingPage({ reviews }) {
+function ReviewsListingPage({ casinos }) {
   return (
     <Fragment>
       <SeoHead
         item={{
           h1: "Casino Reviews",
-          metaDescription: "Browse all casino reviews — trust scores, withdrawal speeds, and bonus terms.",
+          metaDescription:
+            "Browse sweepstakes casino reviews — bonus offers, ratings, and honest analysis. No purchase necessary.",
         }}
       />
       <ReviewsBanner />
       <div className="custom-container pt-[60px] pb-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review) => {
-            const description =
-              review.postExcerpt ||
-              review.excerpt ||
-              review.metaDescription ||
-              "";
-            const imageUrl = review.image || '/images/goonzerflow/casino-chips-stack.png';
-            return (
-              <div
-                key={review.slug}
-                className="olympus-card overflow-hidden"
-                style={{ padding: 0 }}
-              >
-                <div className="relative h-[200px] overflow-hidden">
-                  <img
-                    src={imageUrl}
-                    alt={review.h1 || review.title}
-                    className="w-full h-full object-cover"
-                  />
+          {casinos.map((casino) => (
+            <div
+              key={casino.slug}
+              className="olympus-card overflow-hidden"
+              style={{ padding: 0 }}
+            >
+              <div className="relative h-[200px] overflow-hidden">
+                <img
+                  src={casino.image}
+                  alt={casino.name}
+                  className="w-full h-full object-cover"
+                />
+                {/* Rating badge */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "12px",
+                    right: "12px",
+                    width: "56px",
+                    height: "56px",
+                    borderRadius: "50%",
+                    background:
+                      casino.rating >= 9.0
+                        ? "var(--gold-light)"
+                        : "var(--gold-primary)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontFamily: "var(--font-data)",
+                    fontWeight: 700,
+                    fontSize: "1.1rem",
+                    color: "var(--olympus-navy)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
+                  }}
+                >
+                  {casino.rating}
                 </div>
-                <div className="p-6">
-                  {review.date && (
-                    <p className="text-sm mb-2" style={{ color: 'var(--marble-deep)', fontFamily: 'var(--font-data)' }}>{review.date}</p>
-                  )}
-                  <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-subsection)', fontWeight: 600, letterSpacing: 'var(--tracking-display)', color: 'var(--marble-white)', marginBottom: 'var(--space-sm)' }}>
-                    <Link href={`/reviews/${review.slug}`}>
-                      {review.h1 || review.title}
-                    </Link>
-                  </h2>
-                  {typeof review.rating === "number" && (
-                    <p className="text-sm font-semibold mb-2" style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-data)' }}>
-                      Rating: {review.rating}/5
-                    </p>
-                  )}
-                  {description && (
-                    <p style={{ color: 'var(--marble-warm)', lineHeight: 'var(--leading-body)' }} className="line-clamp-3">
-                      {description}
-                    </p>
-                  )}
-                  <Link
-                    href={`/reviews/${review.slug}`}
-                    className="inline-block mt-4 font-semibold"
-                    style={{ color: 'var(--gold-primary)' }}
-                  >
-                    Read Review &rarr;
-                  </Link>
+                {/* Tagline badge */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "12px",
+                    left: "12px",
+                    background: "rgba(11, 17, 32, 0.85)",
+                    border: "1px solid var(--gold-muted)",
+                    borderRadius: "4px",
+                    padding: "4px 10px",
+                    fontFamily: "var(--font-display)",
+                    fontSize: "var(--text-tiny)",
+                    letterSpacing: "var(--tracking-caps)",
+                    color: "var(--gold-primary)",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {casino.tagline}
                 </div>
               </div>
-            );
-          })}
+              <div className="p-6">
+                <h2
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "var(--text-subsection)",
+                    fontWeight: 600,
+                    letterSpacing: "var(--tracking-display)",
+                    color: "var(--marble-white)",
+                    marginBottom: "var(--space-xs)",
+                  }}
+                >
+                  <Link href={`/reviews/${casino.slug}`}>{casino.name}</Link>
+                </h2>
+                <p
+                  style={{
+                    color: "var(--gold-primary)",
+                    fontFamily: "var(--font-data)",
+                    fontSize: "var(--text-small)",
+                    fontWeight: 600,
+                    marginBottom: "var(--space-sm)",
+                  }}
+                >
+                  {casino.bonus}
+                </p>
+                <p
+                  style={{
+                    color: "var(--marble-warm)",
+                    lineHeight: "var(--leading-body)",
+                  }}
+                  className="line-clamp-2 text-sm"
+                >
+                  {casino.excerpt}
+                </p>
+                <a
+                  href={casino.affiliateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold-primary inline-block mt-4 text-center"
+                  style={{ width: "100%", textDecoration: "none" }}
+                >
+                  Get Bonus
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </Fragment>
@@ -73,11 +127,16 @@ function ReviewsListingPage({ reviews }) {
 }
 
 export function getStaticProps() {
-  const allItems = getAllItems("reviews");
+  const sorted = [...casinos]
+    .sort((a, b) => b.rating - a.rating)
+    .map((casino) => ({
+      ...casino,
+      affiliateUrl: getAffiliateLink(casino.affiliateKey),
+    }));
 
   return {
     props: {
-      reviews: allItems,
+      casinos: sorted,
     },
   };
 }
