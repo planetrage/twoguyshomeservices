@@ -17,6 +17,18 @@ function ReviewsListingPage({ casinos }) {
       />
       <ReviewsBanner />
       <div className="custom-container pt-[60px] pb-[60px]">
+        {/* Timestamp header */}
+        <p
+          className="text-center mb-8"
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "var(--text-small)",
+            color: "var(--marble-deep)",
+          }}
+        >
+          Rankings last updated: February 16, 2026 | 22 casinos reviewed
+        </p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {casinos.map((casino) => (
             <div
@@ -55,25 +67,93 @@ function ReviewsListingPage({ casinos }) {
                 >
                   {casino.rating}
                 </div>
-                {/* Tagline badge */}
+                {/* Rank number — large gold */}
                 <div
                   style={{
                     position: "absolute",
-                    top: "12px",
-                    left: "12px",
+                    bottom: "0",
+                    left: "0",
                     background: "rgba(11, 17, 32, 0.85)",
-                    border: "1px solid var(--gold-muted)",
-                    borderRadius: "4px",
-                    padding: "4px 10px",
-                    fontFamily: "var(--font-display)",
-                    fontSize: "var(--text-tiny)",
-                    letterSpacing: "var(--tracking-caps)",
+                    borderTopRightRadius: "8px",
+                    padding: "4px 14px",
+                    fontFamily: "var(--font-data)",
+                    fontSize: "1.5rem",
+                    fontWeight: 700,
                     color: "var(--gold-primary)",
-                    textTransform: "uppercase",
                   }}
                 >
-                  {casino.tagline}
+                  #{casino.rank}
                 </div>
+                {/* Rank badge for top 3 */}
+                {casino.rank <= 3 && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "12px",
+                      left: "12px",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "4px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        background:
+                          "linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 45%, var(--gold-light) 100%)",
+                        color: "var(--olympus-navy)",
+                        fontFamily: "var(--font-display)",
+                        fontSize: "var(--text-tiny)",
+                        fontWeight: 700,
+                        letterSpacing: "var(--tracking-caps)",
+                        padding: "4px 10px",
+                        borderRadius: "4px",
+                        textTransform: "uppercase",
+                        boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
+                      }}
+                    >
+                      #{casino.rank} Ranked
+                    </span>
+                    {casino.rank === 1 && (
+                      <span
+                        style={{
+                          background: "rgba(11, 17, 32, 0.9)",
+                          border: "1px solid var(--gold-primary)",
+                          color: "var(--gold-primary)",
+                          fontFamily: "var(--font-display)",
+                          fontSize: "var(--text-tiny)",
+                          fontWeight: 600,
+                          letterSpacing: "var(--tracking-caps)",
+                          padding: "3px 8px",
+                          borderRadius: "4px",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        Editor&#39;s Pick
+                      </span>
+                    )}
+                  </div>
+                )}
+                {/* Tagline badge — only for rank > 3 */}
+                {casino.rank > 3 && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "12px",
+                      left: "12px",
+                      background: "rgba(11, 17, 32, 0.85)",
+                      border: "1px solid var(--gold-muted)",
+                      borderRadius: "4px",
+                      padding: "4px 10px",
+                      fontFamily: "var(--font-display)",
+                      fontSize: "var(--text-tiny)",
+                      letterSpacing: "var(--tracking-caps)",
+                      color: "var(--gold-primary)",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {casino.tagline}
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <h2
@@ -128,9 +208,10 @@ function ReviewsListingPage({ casinos }) {
 
 export function getStaticProps() {
   const sorted = [...casinos]
-    .sort((a, b) => b.rating - a.rating)
-    .map((casino) => ({
+    .sort((a, b) => b.priorityScore - a.priorityScore)
+    .map((casino, index) => ({
       ...casino,
+      rank: index + 1,
       affiliateUrl: getAffiliateLink(casino.affiliateKey),
     }));
 

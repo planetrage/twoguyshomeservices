@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import GoldCTA from '../ui/GoldCTA';
-
 function Top3Casinos({ casinos }) {
   const top3 = casinos.slice(0, 3);
 
@@ -34,10 +31,20 @@ function Top3Casinos({ casinos }) {
               fontWeight: 600,
               letterSpacing: 'var(--tracking-display)',
               color: 'var(--marble-white)',
+              marginBottom: 'var(--space-sm)',
             }}
           >
             Highest Rated Sweepstakes Casinos
           </h2>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--text-small)',
+              color: 'var(--marble-deep)',
+            }}
+          >
+            Updated February 2026 | 22 Casinos Compared
+          </p>
         </div>
 
         {/* Top 3 Cards */}
@@ -84,6 +91,54 @@ function Top3Casinos({ casinos }) {
                 >
                   {casino.rating}
                 </div>
+                {/* Rank Badge */}
+                {casino.rank <= 3 && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '12px',
+                      left: '12px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '4px',
+                    }}
+                  >
+                    <span
+                      style={{
+                        background: 'linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 45%, var(--gold-light) 100%)',
+                        color: 'var(--olympus-navy)',
+                        fontFamily: 'var(--font-display)',
+                        fontSize: 'var(--text-tiny)',
+                        fontWeight: 700,
+                        letterSpacing: 'var(--tracking-caps)',
+                        padding: '4px 10px',
+                        borderRadius: '4px',
+                        textTransform: 'uppercase',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+                      }}
+                    >
+                      #{casino.rank} Ranked
+                    </span>
+                    {casino.rank === 1 && (
+                      <span
+                        style={{
+                          background: 'rgba(11, 17, 32, 0.9)',
+                          border: '1px solid var(--gold-primary)',
+                          color: 'var(--gold-primary)',
+                          fontFamily: 'var(--font-display)',
+                          fontSize: 'var(--text-tiny)',
+                          fontWeight: 600,
+                          letterSpacing: 'var(--tracking-caps)',
+                          padding: '3px 8px',
+                          borderRadius: '4px',
+                          textTransform: 'uppercase',
+                        }}
+                      >
+                        Editor&#39;s Pick
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Content */}

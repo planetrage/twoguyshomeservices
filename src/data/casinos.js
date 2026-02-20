@@ -40,6 +40,7 @@ const casinos = [
     bonus: "UP TO 1.5M CC + 75 FREE SC",
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 22,
   },
   {
     slug: "baba-casino",
@@ -62,6 +63,7 @@ const casinos = [
     bonus: "UP TO 10.8M GC & 120 FREE SC",
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 21,
   },
   {
     slug: "jackpota",
@@ -84,6 +86,7 @@ const casinos = [
     bonus: "80K GC + 40 SC",
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 20,
   },
   {
     slug: "sweepnext",
@@ -106,6 +109,7 @@ const casinos = [
     bonus: "850K GC + 85 FREE SC",
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 19,
   },
   {
     slug: "big-pirate",
@@ -128,6 +132,7 @@ const casinos = [
     bonus: "250,000 GC + 25 DIAMONDS",
     tagline: TAGLINES[4],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 18,
   },
   {
     slug: "splash-coins",
@@ -150,6 +155,7 @@ const casinos = [
     bonus: "500K GC + 20 FREE SC",
     tagline: TAGLINES[5],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 17,
   },
   {
     slug: "spinfinite",
@@ -172,6 +178,7 @@ const casinos = [
     bonus: "60K GC + 40 SC FREE",
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 16,
   },
   {
     slug: "rolla",
@@ -194,6 +201,7 @@ const casinos = [
     bonus: "1.5M GC + 30 FREE SC",
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 15,
   },
   {
     slug: "lonestar",
@@ -216,6 +224,7 @@ const casinos = [
     bonus: "UP TO 500K GC + 105 FREE SC",
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 14,
   },
   {
     slug: "spree",
@@ -238,6 +247,7 @@ const casinos = [
     bonus: "85K GC + 62.5 SC",
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 13,
   },
   {
     slug: "jackpot-rabbit",
@@ -260,6 +270,7 @@ const casinos = [
     bonus: "60 FREE SUPER COINS + 1.325M GC",
     tagline: TAGLINES[4],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 12,
   },
   {
     slug: "big-shot-games",
@@ -282,6 +293,7 @@ const casinos = [
     bonus: "50K GC + 40 FREE SC",
     tagline: TAGLINES[5],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 11,
   },
   {
     slug: "the-win-zone",
@@ -304,6 +316,7 @@ const casinos = [
     bonus: "25K GC + 25 FREE SC",
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 10,
   },
   {
     slug: "fire-sevens",
@@ -326,6 +339,7 @@ const casinos = [
     bonus: "900,000 GC + 50 FREE SC",
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 9,
   },
   {
     slug: "vegas-way",
@@ -348,6 +362,7 @@ const casinos = [
     bonus: "750,000 GC + 40 FREE SC",
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 8,
   },
   {
     slug: "sweepico",
@@ -370,6 +385,7 @@ const casinos = [
     bonus: "1.0M GC + 60 FREE SC",
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 7,
   },
   {
     slug: "playtana",
@@ -392,6 +408,7 @@ const casinos = [
     bonus: "1.2M GC + 60 FREE SC",
     tagline: TAGLINES[4],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 6,
   },
   {
     slug: "mr-goodwin",
@@ -414,6 +431,7 @@ const casinos = [
     bonus: "850,000 GC + 50 FREE SC",
     tagline: TAGLINES[5],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 5,
   },
   {
     slug: "scarlet-sands",
@@ -436,6 +454,7 @@ const casinos = [
     bonus: "900,000 GC + 60 FREE SC",
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 4,
   },
   {
     slug: "storm-rush",
@@ -458,6 +477,7 @@ const casinos = [
     bonus: "750,000 GC + 40 FREE SC",
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 3,
   },
   {
     slug: "real-prize",
@@ -480,6 +500,7 @@ const casinos = [
     bonus: "UP TO 625K GC + 125 SC FREE",
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 2,
   },
   {
     slug: "fortune-wheelz",
@@ -502,6 +523,7 @@ const casinos = [
     bonus: "UP TO 450K GC + 2000 FC",
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
+    priorityScore: 1,
   },
 ];
 

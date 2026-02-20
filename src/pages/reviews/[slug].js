@@ -4,6 +4,24 @@ import SeoHead from "../../components/seo/seo-head";
 import casinos from "../../data/casinos";
 import getAffiliateLink from "../../lib/getAffiliateLink";
 
+function formatDate(dateStr) {
+  const d = new Date(dateStr + "T00:00:00");
+  return d.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+const legalLine = {
+  fontFamily: "var(--font-body)",
+  fontSize: "var(--text-tiny)",
+  color: "var(--marble-deep)",
+  textAlign: "center",
+  lineHeight: 1.4,
+  marginTop: "var(--space-xs)",
+};
+
 function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
   return (
     <Fragment>
@@ -46,11 +64,22 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
                   letterSpacing: "var(--tracking-display)",
                   color: "var(--marble-white)",
                   lineHeight: "var(--leading-display)",
-                  marginBottom: "var(--space-sm)",
+                  marginBottom: "var(--space-xs)",
                 }}
               >
                 {casino.name}
               </h1>
+              {/* Last Updated timestamp */}
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-small)",
+                  color: "var(--marble-warm)",
+                  marginBottom: "var(--space-sm)",
+                }}
+              >
+                Last Updated: {formatDate(casino.updatedAt)}
+              </p>
               <p
                 style={{
                   fontFamily: "var(--font-data)",
@@ -86,15 +115,19 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
               >
                 {casino.rating}
               </div>
-              <a
-                href={affiliateUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold-cta"
-                style={{ textDecoration: "none", whiteSpace: "nowrap" }}
-              >
-                Get Bonus
-              </a>
+              {/* CTA 1: Hero "Get Bonus" */}
+              <div>
+                <a
+                  href={affiliateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold-cta"
+                  style={{ textDecoration: "none", whiteSpace: "nowrap", display: "inline-block" }}
+                >
+                  Get Bonus
+                </a>
+                <p style={legalLine}>No purchase necessary. 18+. T&amp;Cs apply.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -173,15 +206,17 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
             >
               {casino.legalNote}
             </p>
+            {/* CTA 2: After bonus — secondary style */}
             <a
               href={affiliateUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold-primary inline-block text-center"
+              className="btn-gold-secondary inline-block text-center"
               style={{ textDecoration: "none" }}
             >
-              Claim Bonus
+              Claim This Offer
             </a>
+            <p style={legalLine}>No purchase necessary. 18+. T&amp;Cs apply.</p>
           </section>
 
           {/* Pros & Cons */}
@@ -278,6 +313,20 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
                 </ul>
               </div>
             </div>
+          </section>
+
+          {/* CTA 3: After Pros/Cons — secondary style */}
+          <section className="mb-12 text-center">
+            <a
+              href={affiliateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold-secondary inline-block"
+              style={{ textDecoration: "none" }}
+            >
+              Visit {casino.name}
+            </a>
+            <p style={legalLine}>No purchase necessary. 18+. T&amp;Cs apply.</p>
           </section>
 
           {/* Is It Legal? */}
@@ -479,7 +528,7 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
             ))}
           </section>
 
-          {/* CTA */}
+          {/* CTA 4: Bottom — primary style */}
           <section className="mb-12 text-center">
             <a
               href={affiliateUrl}
@@ -490,6 +539,7 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
             >
               Get Bonus at {casino.name}
             </a>
+            <p style={legalLine}>No purchase necessary. 18+. T&amp;Cs apply.</p>
           </section>
 
           {/* Affiliate disclosure */}
@@ -617,10 +667,10 @@ export function getStaticProps(context) {
 
   const affiliateUrl = getAffiliateLink(casino.affiliateKey);
 
-  // Similar casinos: exclude current, sort by rating desc, take top 3
+  // Similar casinos: exclude current, sort by priorityScore desc, take top 3
   const similarCasinos = casinos
     .filter((c) => c.slug !== slug)
-    .sort((a, b) => b.rating - a.rating)
+    .sort((a, b) => b.priorityScore - a.priorityScore)
     .slice(0, 3)
     .map((c) => ({
       slug: c.slug,

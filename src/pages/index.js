@@ -7,6 +7,7 @@ import Hero from '../components/home-page/hero';
 import Top3Casinos from '../components/home-page/top3-casinos';
 import BonusFilterStrip from '../components/home-page/bonus-filter-strip';
 import Top6Casinos from '../components/home-page/top6-casinos';
+import ComparisonTable from '../components/home-page/comparison-table';
 import WhyTrust from '../components/home-page/why-trust';
 import Services from '../components/home-page/services';
 import FeaturedPosts from '../components/home-page/featured-posts';
@@ -96,10 +97,13 @@ function HomePage(props) {
 
       <LightningDivider />
 
-      {/* 3. Bonus Filter Strip */}
+      {/* 3. Mini Comparison Table */}
+      <ComparisonTable casinos={props.allCasinos.slice(0, 6)} />
+
+      {/* 4. Bonus Filter Strip */}
       <BonusFilterStrip activeFilter={activeFilter} onFilterChange={setActiveFilter} />
 
-      {/* 4. Top 6 Casino Grid */}
+      {/* 5. Top 6 Casino Grid */}
       <Top6Casinos casinos={top6Sorted} />
 
       <LightningDivider />
@@ -196,11 +200,12 @@ export function getStaticProps() {
   const posts = getAllItems('posts');
   const featuredPosts = getFeaturedItems(posts);
 
-  // Prepare casino data with affiliate URLs
+  // Prepare casino data with affiliate URLs — sorted by priorityScore
   const allCasinos = [...casinos]
-    .sort((a, b) => b.rating - a.rating)
-    .map((casino) => ({
+    .sort((a, b) => b.priorityScore - a.priorityScore)
+    .map((casino, index) => ({
       ...casino,
+      rank: index + 1,
       affiliateUrl: getAffiliateLink(casino.affiliateKey),
     }));
 
