@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { getAllItems, getFeaturedItems } from '../lib/items-util';
 import casinos from '../data/casinos';
 import getAffiliateLink from '../lib/getAffiliateLink';
+import sortCasinos from '../lib/sortCasinos';
 import Hero from '../components/home-page/hero';
 import Top3Casinos from '../components/home-page/top3-casinos';
 import BonusFilterStrip from '../components/home-page/bonus-filter-strip';
@@ -17,9 +18,9 @@ import GoldCTA from '../components/ui/GoldCTA';
 
 /**
  * Extract a numeric SC/premium-coin value from bonus text for sorting.
- * e.g. "UP TO 1.5M CC + 75 FREE SC" → 75
- *      "80K GC + 40 SC" → 40
- *      "UP TO 450K GC + 2000 FC" → 2000
+ * e.g. "UP TO 1.5M CC + 75 FREE SC" -> 75
+ *      "80K GC + 40 SC" -> 40
+ *      "UP TO 450K GC + 2000 FC" -> 2000
  */
 function parseSCValue(bonus) {
   // Match patterns like "75 FREE SC", "40 SC", "125 SC FREE", "25 DIAMONDS", "2000 FC", "60 SUPER COINS"
@@ -82,11 +83,21 @@ function HomePage(props) {
   return (
     <Fragment>
       <Head>
-        <title>Best Sweepstakes Casino Bonuses — Goonzerflow</title>
+        <title>Goonzerflow — Top Sweepstakes Casino Bonuses Ranked &amp; Verified</title>
         <meta
           name="description"
-          content="Compare the best sweepstakes casino bonuses. Updated rankings, verified offers, and independent reviews. No purchase necessary. 18+."
+          content="Find the best sweepstakes casino bonuses in 2026. Independent rankings, verified offers, and structured analysis. No purchase necessary. 18+."
         />
+        <link rel="canonical" href="https://goonzerflow.com/" />
+        <meta property="og:title" content="Goonzerflow — Top Sweepstakes Casino Bonuses Ranked & Verified" />
+        <meta property="og:description" content="Find the best sweepstakes casino bonuses in 2026. Independent rankings, verified offers, and structured analysis. No purchase necessary. 18+." />
+        <meta property="og:image" content="/images/goonzerflow/casino-roulette-top.png" />
+        <meta property="og:url" content="https://goonzerflow.com/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Goonzerflow — Top Sweepstakes Casino Bonuses Ranked & Verified" />
+        <meta name="twitter:description" content="Find the best sweepstakes casino bonuses in 2026. Independent rankings, verified offers, and structured analysis. No purchase necessary. 18+." />
+        <meta name="twitter:image" content="/images/goonzerflow/casino-roulette-top.png" />
       </Head>
 
       {/* 1. Hero */}
@@ -200,9 +211,8 @@ export function getStaticProps() {
   const posts = getAllItems('posts');
   const featuredPosts = getFeaturedItems(posts);
 
-  // Prepare casino data with affiliate URLs — sorted by priorityScore
-  const allCasinos = [...casinos]
-    .sort((a, b) => b.priorityScore - a.priorityScore)
+  // Prepare casino data with affiliate URLs — sorted by revenueTier, then priorityScore, then rating
+  const allCasinos = sortCasinos(casinos)
     .map((casino, index) => ({
       ...casino,
       rank: index + 1,

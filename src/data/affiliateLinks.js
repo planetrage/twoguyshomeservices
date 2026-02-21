@@ -32,6 +32,7 @@ const affiliateLinks = {
   "storm-rush": { url: "#", label: "Storm Rush" },
   "real-prize": { url: "#", label: "Real Prize" },
   "fortune-wheelz": { url: "#", label: "Fortune Wheelz" },
+  "rainbet": { url: "#", label: "Rainbet" },
 };
 
 export default affiliateLinks;

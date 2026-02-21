@@ -1,8 +1,10 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import SeoHead from "../../components/seo/seo-head";
+import Head from "next/head";
 import casinos from "../../data/casinos";
 import getAffiliateLink from "../../lib/getAffiliateLink";
+import sortCasinos from "../../lib/sortCasinos";
+import trackAffiliateClick from "../../lib/trackAffiliateClick";
 
 function formatDate(dateStr) {
   const d = new Date(dateStr + "T00:00:00");
@@ -23,14 +25,97 @@ const legalLine = {
 };
 
 function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
+  const faqItems = [
+    {
+      q: `Is ${casino.name} legit?`,
+      a: `Yes. ${casino.name} operates as a legal sweepstakes casino. It uses a dual-currency model where Gold Coins are for entertainment and Sweeps Coins (or equivalent) can be redeemed for prizes. No purchase is necessary to play.`,
+    },
+    {
+      q: "Do I need to purchase anything?",
+      a: "No. Sweepstakes casinos are free to play. You can earn coins through sign-up bonuses, daily logins, mail-in offers, and social media promotions. Optional coin purchases are available but never required.",
+    },
+    {
+      q: "What states is it available in?",
+      a: "Sweepstakes casinos are available in most U.S. states. However, some states like Washington and Idaho have restrictions. Check the platform's terms of service for the most current availability list.",
+    },
+    {
+      q: "How do I redeem prizes?",
+      a: "Once you accumulate the minimum required Sweeps Coins (or equivalent premium currency), you can request a redemption. Processing times vary by platform, and you may need to complete identity verification before your first redemption.",
+    },
+    {
+      q: "Is there a mobile app?",
+      a: `Many sweepstakes casinos, including ${casino.name}, are accessible through mobile web browsers. Some platforms also offer dedicated apps. Check the platform directly for the latest mobile options.`,
+    },
+  ];
+
+  const pageTitle = `${casino.name} Review 2026 — Bonus, Rating & How to Play | Goonzerflow`;
+  const metaDesc = `${casino.excerpt} Rated ${casino.rating}/10. ${casino.bonus}. No purchase necessary.`;
+  const canonicalUrl = `https://goonzerflow.com/reviews/${casino.slug}`;
+
+  // FAQ structured data
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  // BreadcrumbList structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://goonzerflow.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Casino Reviews",
+        item: "https://goonzerflow.com/reviews",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: casino.name,
+        item: canonicalUrl,
+      },
+    ],
+  };
+
   return (
     <Fragment>
-      <SeoHead
-        item={{
-          h1: `${casino.name} Review`,
-          metaDescription: `${casino.name} sweepstakes casino review — ${casino.bonus}. Is it legit? Read our honest analysis.`,
-        }}
-      />
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDesc} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDesc} />
+        <meta property="og:image" content={casino.image} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDesc} />
+        <meta name="twitter:image" content={casino.image} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      </Head>
 
       {/* Hero */}
       <div
@@ -120,9 +205,10 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
                 <a
                   href={affiliateUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow sponsored noopener noreferrer"
                   className="btn-gold-cta"
                   style={{ textDecoration: "none", whiteSpace: "nowrap", display: "inline-block" }}
+                  onClick={() => trackAffiliateClick(casino.slug, "detail-hero", affiliateUrl)}
                 >
                   Get Bonus
                 </a>
@@ -210,9 +296,10 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
             <a
               href={affiliateUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow sponsored noopener noreferrer"
               className="btn-gold-secondary inline-block text-center"
               style={{ textDecoration: "none" }}
+              onClick={() => trackAffiliateClick(casino.slug, "detail-bonus", affiliateUrl)}
             >
               Claim This Offer
             </a>
@@ -320,9 +407,10 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
             <a
               href={affiliateUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow sponsored noopener noreferrer"
               className="btn-gold-secondary inline-block"
               style={{ textDecoration: "none" }}
+              onClick={() => trackAffiliateClick(casino.slug, "detail-proscons", affiliateUrl)}
             >
               Visit {casino.name}
             </a>
@@ -478,28 +566,7 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
             >
               Frequently Asked Questions
             </h2>
-            {[
-              {
-                q: `Is ${casino.name} legit?`,
-                a: `Yes. ${casino.name} operates as a legal sweepstakes casino. It uses a dual-currency model where Gold Coins are for entertainment and Sweeps Coins (or equivalent) can be redeemed for prizes. No purchase is necessary to play.`,
-              },
-              {
-                q: "Do I need to purchase anything?",
-                a: "No. Sweepstakes casinos are free to play. You can earn coins through sign-up bonuses, daily logins, mail-in offers, and social media promotions. Optional coin purchases are available but never required.",
-              },
-              {
-                q: "What states is it available in?",
-                a: "Sweepstakes casinos are available in most U.S. states. However, some states like Washington and Idaho have restrictions. Check the platform's terms of service for the most current availability list.",
-              },
-              {
-                q: "How do I redeem prizes?",
-                a: "Once you accumulate the minimum required Sweeps Coins (or equivalent premium currency), you can request a redemption. Processing times vary by platform, and you may need to complete identity verification before your first redemption.",
-              },
-              {
-                q: "Is there a mobile app?",
-                a: `Many sweepstakes casinos, including ${casino.name}, are accessible through mobile web browsers. Some platforms also offer dedicated apps. Check the platform directly for the latest mobile options.`,
-              },
-            ].map((faq, i) => (
+            {faqItems.map((faq, i) => (
               <div
                 key={i}
                 className="mb-4 p-5 rounded-lg"
@@ -528,14 +595,57 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
             ))}
           </section>
 
+          {/* Related Guides — internal link loop */}
+          <section className="mb-12">
+            <h3
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "var(--text-subsection)",
+                fontWeight: 600,
+                letterSpacing: "var(--tracking-display)",
+                color: "var(--marble-white)",
+                marginBottom: "var(--space-md)",
+              }}
+            >
+              Related Guides
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <li style={{ marginBottom: "var(--space-sm)" }}>
+                <Link
+                  href="/best-sweepstakes-casino-bonuses"
+                  style={{
+                    color: "var(--gold-primary)",
+                    fontFamily: "var(--font-body)",
+                    textDecoration: "none",
+                  }}
+                >
+                  Best Sweepstakes Casino Bonuses 2026 &rarr;
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reviews"
+                  style={{
+                    color: "var(--gold-primary)",
+                    fontFamily: "var(--font-body)",
+                    textDecoration: "none",
+                  }}
+                >
+                  Compare All 22 Casinos &rarr;
+                </Link>
+              </li>
+            </ul>
+          </section>
+
           {/* CTA 4: Bottom — primary style */}
           <section className="mb-12 text-center">
             <a
               href={affiliateUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow sponsored noopener noreferrer"
               className="btn-gold-cta inline-block"
               style={{ textDecoration: "none" }}
+              onClick={() => trackAffiliateClick(casino.slug, "detail-bottom", affiliateUrl)}
             >
               Get Bonus at {casino.name}
             </a>
@@ -640,9 +750,10 @@ function CasinoReviewPage({ casino, affiliateUrl, similarCasinos }) {
                     <a
                       href={sim.affiliateUrl}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow sponsored noopener noreferrer"
                       className="btn-gold-primary inline-block text-center text-sm"
                       style={{ textDecoration: "none", width: "100%" }}
+                      onClick={() => trackAffiliateClick(sim.slug, "detail-similar", sim.affiliateUrl)}
                     >
                       Get Bonus
                     </a>
@@ -665,12 +776,10 @@ export function getStaticProps(context) {
     return { notFound: true };
   }
 
-  const affiliateUrl = getAffiliateLink(casino.affiliateKey);
+  const affiliateUrl = getAffiliateLink(casino.affiliateKey, "detail-hero");
 
-  // Similar casinos: exclude current, sort by priorityScore desc, take top 3
-  const similarCasinos = casinos
-    .filter((c) => c.slug !== slug)
-    .sort((a, b) => b.priorityScore - a.priorityScore)
+  // Similar casinos: exclude current, sort by revenueTier/priorityScore/rating, take top 3
+  const similarCasinos = sortCasinos(casinos.filter((c) => c.slug !== slug))
     .slice(0, 3)
     .map((c) => ({
       slug: c.slug,
@@ -678,7 +787,7 @@ export function getStaticProps(context) {
       image: c.image,
       rating: c.rating,
       bonus: c.bonus,
-      affiliateUrl: getAffiliateLink(c.affiliateKey),
+      affiliateUrl: getAffiliateLink(c.affiliateKey, "detail-similar"),
     }));
 
   return {

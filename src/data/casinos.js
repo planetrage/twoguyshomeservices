@@ -41,6 +41,7 @@ const casinos = [
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 22,
+    revenueTier: 1,
   },
   {
     slug: "baba-casino",
@@ -64,6 +65,7 @@ const casinos = [
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 21,
+    revenueTier: 1,
   },
   {
     slug: "jackpota",
@@ -87,6 +89,7 @@ const casinos = [
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 20,
+    revenueTier: 1,
   },
   {
     slug: "sweepnext",
@@ -110,6 +113,7 @@ const casinos = [
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 19,
+    revenueTier: 2,
   },
   {
     slug: "big-pirate",
@@ -133,6 +137,7 @@ const casinos = [
     tagline: TAGLINES[4],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 18,
+    revenueTier: 2,
   },
   {
     slug: "splash-coins",
@@ -156,6 +161,7 @@ const casinos = [
     tagline: TAGLINES[5],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 17,
+    revenueTier: 2,
   },
   {
     slug: "spinfinite",
@@ -179,6 +185,7 @@ const casinos = [
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 16,
+    revenueTier: 2,
   },
   {
     slug: "rolla",
@@ -202,6 +209,7 @@ const casinos = [
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 15,
+    revenueTier: 2,
   },
   {
     slug: "lonestar",
@@ -225,6 +233,7 @@ const casinos = [
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 14,
+    revenueTier: 2,
   },
   {
     slug: "spree",
@@ -248,6 +257,7 @@ const casinos = [
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 13,
+    revenueTier: 3,
   },
   {
     slug: "jackpot-rabbit",
@@ -271,6 +281,7 @@ const casinos = [
     tagline: TAGLINES[4],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 12,
+    revenueTier: 3,
   },
   {
     slug: "big-shot-games",
@@ -294,6 +305,7 @@ const casinos = [
     tagline: TAGLINES[5],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 11,
+    revenueTier: 3,
   },
   {
     slug: "the-win-zone",
@@ -317,6 +329,7 @@ const casinos = [
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 10,
+    revenueTier: 3,
   },
   {
     slug: "fire-sevens",
@@ -340,6 +353,7 @@ const casinos = [
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 9,
+    revenueTier: 3,
   },
   {
     slug: "vegas-way",
@@ -363,6 +377,7 @@ const casinos = [
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 8,
+    revenueTier: 3,
   },
   {
     slug: "sweepico",
@@ -386,6 +401,7 @@ const casinos = [
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 7,
+    revenueTier: 3,
   },
   {
     slug: "playtana",
@@ -409,6 +425,7 @@ const casinos = [
     tagline: TAGLINES[4],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 6,
+    revenueTier: 3,
   },
   {
     slug: "mr-goodwin",
@@ -432,6 +449,7 @@ const casinos = [
     tagline: TAGLINES[5],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 5,
+    revenueTier: 3,
   },
   {
     slug: "scarlet-sands",
@@ -455,6 +473,7 @@ const casinos = [
     tagline: TAGLINES[0],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 4,
+    revenueTier: 3,
   },
   {
     slug: "storm-rush",
@@ -478,6 +497,7 @@ const casinos = [
     tagline: TAGLINES[1],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 3,
+    revenueTier: 3,
   },
   {
     slug: "real-prize",
@@ -501,6 +521,7 @@ const casinos = [
     tagline: TAGLINES[2],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 2,
+    revenueTier: 3,
   },
   {
     slug: "fortune-wheelz",
@@ -524,6 +545,7 @@ const casinos = [
     tagline: TAGLINES[3],
     legalNote: "No purchase necessary. 18+. T&Cs apply. Void where prohibited.",
     priorityScore: 1,
+    revenueTier: 3,
   },
 ];
 

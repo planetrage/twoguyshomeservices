@@ -1,3 +1,5 @@
+import trackAffiliateClick from '../../lib/trackAffiliateClick';
+
 function Top3Casinos({ casinos }) {
   const top3 = casinos.slice(0, 3);
 
@@ -175,9 +177,10 @@ function Top3Casinos({ casinos }) {
                 <a
                   href={casino.affiliateUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow sponsored noopener noreferrer"
                   className="btn-gold-primary inline-block text-center"
                   style={{ width: '100%', textDecoration: 'none', marginBottom: 'var(--space-sm)' }}
+                  onClick={() => trackAffiliateClick(casino.slug, 'homepage-top3', casino.affiliateUrl)}
                 >
                   Get Bonus
                 </a>

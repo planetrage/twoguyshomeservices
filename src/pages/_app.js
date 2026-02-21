@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Layout from '../components/layout/layout';
 import Head from 'next/head';
+import Analytics from '../components/Analytics';
 import { ScrollToTop } from '../components/scroll';
 
 function MyApp({ Component, pageProps }) {
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }) {
                 />
                 <link rel='shortcut icon' href='../favicon.png' />
             </Head>
+            <Analytics />
             <Component {...pageProps} />
             {/*<ScrollToTop />*/}
         </Layout>

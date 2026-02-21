@@ -6,6 +6,7 @@ import GoldCTA from '../ui/GoldCTA';
 const NAV_LINKS = [
   { label: 'Slots', href: '/posts' },
   { label: 'Casinos', href: '/reviews' },
+  { label: 'Crypto Casinos', href: '/crypto-casinos' },
   { label: 'Guides', href: '/blog' },
   { label: 'Tools', href: '/projects' },
   { label: 'About', href: '/about' },

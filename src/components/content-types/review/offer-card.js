@@ -52,7 +52,7 @@ function OfferCard({ offer }) {
         <a
           href={offer.link}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow sponsored noopener noreferrer"
           className="inline-block mt-4 px-6 py-2 bg-primary text-white rounded font-semibold hover:opacity-90 transition-opacity"
         >
           {offer.ctaText || "Learn More"}

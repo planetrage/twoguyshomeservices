@@ -1,20 +1,32 @@
 import { Fragment } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import ReviewsBanner from "../../components/banners/reviews-banner";
-import SeoHead from "../../components/seo/seo-head";
 import casinos from "../../data/casinos";
 import getAffiliateLink from "../../lib/getAffiliateLink";
+import sortCasinos from "../../lib/sortCasinos";
+import trackAffiliateClick from "../../lib/trackAffiliateClick";
 
 function ReviewsListingPage({ casinos }) {
   return (
     <Fragment>
-      <SeoHead
-        item={{
-          h1: "Casino Reviews",
-          metaDescription:
-            "Browse sweepstakes casino reviews — bonus offers, ratings, and honest analysis. No purchase necessary.",
-        }}
-      />
+      <Head>
+        <title>Best Sweepstakes Casinos 2026 — Top 22 Ranked &amp; Reviewed | Goonzerflow</title>
+        <meta
+          name="description"
+          content="Compare the top 22 sweepstakes casinos ranked by bonus value, game variety, and redemption speed. Updated February 2026. No purchase necessary."
+        />
+        <link rel="canonical" href="https://goonzerflow.com/reviews" />
+        <meta property="og:title" content="Best Sweepstakes Casinos 2026 — Top 22 Ranked & Reviewed | Goonzerflow" />
+        <meta property="og:description" content="Compare the top 22 sweepstakes casinos ranked by bonus value, game variety, and redemption speed. Updated February 2026. No purchase necessary." />
+        <meta property="og:image" content="/images/goonzerflow/casino-chips-stack.png" />
+        <meta property="og:url" content="https://goonzerflow.com/reviews" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Sweepstakes Casinos 2026 — Top 22 Ranked & Reviewed | Goonzerflow" />
+        <meta name="twitter:description" content="Compare the top 22 sweepstakes casinos ranked by bonus value, game variety, and redemption speed. Updated February 2026. No purchase necessary." />
+        <meta name="twitter:image" content="/images/goonzerflow/casino-chips-stack.png" />
+      </Head>
       <ReviewsBanner />
       <div className="custom-container pt-[60px] pb-[60px]">
         {/* Timestamp header */}
@@ -191,9 +203,10 @@ function ReviewsListingPage({ casinos }) {
                 <a
                   href={casino.affiliateUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow sponsored noopener noreferrer"
                   className="btn-gold-primary inline-block mt-4 text-center"
                   style={{ width: "100%", textDecoration: "none" }}
+                  onClick={() => trackAffiliateClick(casino.slug, "reviews-list", casino.affiliateUrl)}
                 >
                   Get Bonus
                 </a>
@@ -207,12 +220,11 @@ function ReviewsListingPage({ casinos }) {
 }
 
 export function getStaticProps() {
-  const sorted = [...casinos]
-    .sort((a, b) => b.priorityScore - a.priorityScore)
+  const sorted = sortCasinos(casinos)
     .map((casino, index) => ({
       ...casino,
       rank: index + 1,
-      affiliateUrl: getAffiliateLink(casino.affiliateKey),
+      affiliateUrl: getAffiliateLink(casino.affiliateKey, "reviews-list"),
     }));
 
   return {

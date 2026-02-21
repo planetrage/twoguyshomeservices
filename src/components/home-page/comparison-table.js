@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import trackAffiliateClick from '../../lib/trackAffiliateClick';
 
 function ComparisonTable({ casinos }) {
   return (
@@ -120,7 +121,7 @@ function ComparisonTable({ casinos }) {
                     <a
                       href={casino.affiliateUrl}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow sponsored noopener noreferrer"
                       className="btn-gold-primary"
                       style={{
                         textDecoration: 'none',
@@ -128,6 +129,7 @@ function ComparisonTable({ casinos }) {
                         padding: '6px 16px',
                         whiteSpace: 'nowrap',
                       }}
+                      onClick={() => trackAffiliateClick(casino.slug, 'homepage-table', casino.affiliateUrl)}
                     >
                       Get Bonus
                     </a>

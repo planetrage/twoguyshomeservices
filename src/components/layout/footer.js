@@ -10,15 +10,15 @@ const SLOT_LINKS = [
 
 const CASINO_LINKS = [
   { label: 'Casino Reviews', href: '/reviews' },
-  { label: 'Best Bonuses', href: '/reviews' },
-  { label: 'Live Casinos', href: '/reviews' },
+  { label: 'Best Bonuses', href: '/best-sweepstakes-casino-bonuses' },
+  { label: 'Crypto Casinos', href: '/crypto-casinos' },
   { label: 'Comparison Tool', href: '/projects' },
 ];
 
 const RESOURCE_LINKS = [
   { label: 'RTP Calculator', href: '/projects' },
   { label: 'About Us', href: '/about' },
-  { label: 'Affiliate Disclosure', href: '/policies' },
+  { label: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
   { label: 'Join Discord', href: '#' },
   { label: 'Privacy Policy', href: '/policies' },
 ];
@@ -94,7 +94,7 @@ function Footer() {
               &copy; {new Date().getFullYear()} Goonzerflow. All rights reserved.
             </p>
             <div className="flex items-center gap-4" style={{ fontSize: 'var(--text-tiny)' }}>
-              <Link href="/policies" style={{ color: 'var(--marble-deep)' }}>
+              <Link href="/affiliate-disclosure" style={{ color: 'var(--marble-deep)' }}>
                 Affiliate Disclosure
               </Link>
               <span style={{ color: 'var(--gold-muted)' }}>|</span>

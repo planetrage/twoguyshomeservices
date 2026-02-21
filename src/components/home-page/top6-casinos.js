@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import trackAffiliateClick from '../../lib/trackAffiliateClick';
 
 function Top6Casinos({ casinos }) {
   return (
@@ -134,9 +135,10 @@ function Top6Casinos({ casinos }) {
                 <a
                   href={casino.affiliateUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow sponsored noopener noreferrer"
                   className="btn-gold-primary inline-block text-center"
                   style={{ width: '100%', textDecoration: 'none' }}
+                  onClick={() => trackAffiliateClick(casino.slug, 'homepage-grid', casino.affiliateUrl)}
                 >
                   Get Bonus
                 </a>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import trackAffiliateClick from '../../lib/trackAffiliateClick';
 
 function MobileStickyCTA() {
   const [dismissed, setDismissed] = useState(false);
@@ -36,6 +37,7 @@ function MobileStickyCTA() {
             flex: 1,
             textAlign: 'center',
           }}
+          onClick={() => trackAffiliateClick('homepage', 'mobile-sticky', '/reviews')}
         >
           View Top Casino Bonuses &rarr;
         </Link>
