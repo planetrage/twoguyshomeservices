@@ -47,7 +47,7 @@ function Services() {
     <section
       style={{
         background: 'var(--color-bg-alt)',
-        paddingTop: 'var(--space-2xl)',
+        paddingTop: 'var(--space-lg)',
         paddingBottom: 'var(--space-3xl)',
       }}
     >
