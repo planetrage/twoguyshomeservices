@@ -347,3 +347,23 @@
   background: var(--color-cta-light);
   color: var(--color-text);
 }
+
+/* ---- Project Gallery Cards ---- */
+.project-image-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.project-image-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+
+/* ---- Contact Buttons — larger on mobile ---- */
+@media (max-width: 640px) {
+  .contact-btn {
+    width: 100% !important;
+    height: 60px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+  }
+}
