@@ -9,6 +9,60 @@ function Hero() {
         background: 'linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-alt) 100%)',
       }}
     >
+      {/* Decorative spilled paint can — left-center area, very subtle */}
+      <div
+        className="hidden md:block"
+        style={{
+          position: 'absolute',
+          left: '12%',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          opacity: 0.09,
+          pointerEvents: 'none',
+          zIndex: 1,
+        }}
+      >
+        <svg width="340" height="420" viewBox="0 0 340 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Paint can body — tilted ~25° to the right */}
+          <g transform="rotate(25, 170, 180)">
+            {/* Can body */}
+            <rect x="100" y="80" width="140" height="180" rx="8" fill="#1B2D4F" />
+            {/* Can rim top */}
+            <ellipse cx="170" cy="80" rx="70" ry="18" fill="#1B2D4F" />
+            <ellipse cx="170" cy="80" rx="60" ry="14" fill="#243B5E" opacity="0.6" />
+            {/* Can rim bottom */}
+            <ellipse cx="170" cy="260" rx="70" ry="18" fill="#1B2D4F" />
+            {/* Can label area */}
+            <rect x="110" y="120" width="120" height="100" rx="4" fill="#D4511E" opacity="0.4" />
+            {/* Can handle */}
+            <path d="M120 70 Q170 30 220 70" stroke="#1B2D4F" strokeWidth="6" fill="none" strokeLinecap="round" />
+            {/* Paint drip on can side */}
+            <path d="M235 100 Q240 130 238 160" stroke="#D4511E" strokeWidth="4" fill="none" opacity="0.5" strokeLinecap="round" />
+          </g>
+
+          {/* Spilled paint puddle — flowing right and down from can opening */}
+          {/* Main orange paint spill */}
+          <ellipse cx="240" cy="300" rx="75" ry="28" fill="#D4511E" opacity="0.35" />
+          <ellipse cx="255" cy="295" rx="55" ry="20" fill="#D4511E" opacity="0.25" />
+          {/* Navy paint spill underneath */}
+          <ellipse cx="220" cy="320" rx="60" ry="22" fill="#1B2D4F" opacity="0.25" />
+          <ellipse cx="235" cy="315" rx="40" ry="15" fill="#1B2D4F" opacity="0.18" />
+          {/* Warm brown/darker orange accent */}
+          <ellipse cx="260" cy="310" rx="35" ry="14" fill="#B8431A" opacity="0.2" />
+
+          {/* Paint stream from can to puddle */}
+          <path d="M210 230 Q230 260 245 285" stroke="#D4511E" strokeWidth="10" fill="none" opacity="0.3" strokeLinecap="round" />
+          <path d="M205 235 Q220 265 230 295" stroke="#1B2D4F" strokeWidth="6" fill="none" opacity="0.2" strokeLinecap="round" />
+
+          {/* Small paint splatters around puddle */}
+          <circle cx="300" cy="290" r="6" fill="#D4511E" opacity="0.2" />
+          <circle cx="310" cy="305" r="4" fill="#B8431A" opacity="0.15" />
+          <circle cx="175" cy="330" r="5" fill="#1B2D4F" opacity="0.15" />
+          <circle cx="285" cy="325" r="3" fill="#D4511E" opacity="0.18" />
+          <circle cx="195" cy="340" r="4" fill="#B8431A" opacity="0.12" />
+        </svg>
+      </div>
+
       {/* Decorative paint roller — right-center area, very subtle */}
       <div
         className="hidden md:block"

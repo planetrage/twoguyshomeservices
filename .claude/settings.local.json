@@ -5,7 +5,8 @@
       "WebFetch(domain:unsplash.com)",
       "Bash(cp test-e.jpg project-1.jpg)",
       "Bash(cp test-c.jpg project-4.jpg)",
-      "Bash(rm -f test-*.jpg)"
+      "Bash(rm -f test-*.jpg)",
+      "Bash(npm run:*)"
     ]
   }
 }
