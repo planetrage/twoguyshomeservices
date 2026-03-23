@@ -78,15 +78,30 @@ function Services() {
           {SERVICES.map(({ title, desc, icon }) => (
             <div
               key={title}
+              className="service-card"
               style={{
                 background: 'var(--color-bg)',
-                border: '1px solid var(--color-border)',
+                borderLeft: '4px solid var(--color-cta)',
                 borderRadius: 'var(--card-radius)',
                 padding: 'var(--space-lg)',
                 boxShadow: '0 2px 12px rgba(0, 0, 0, 0.04)',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               }}
             >
-              <div style={{ color: 'var(--color-cta)', marginBottom: 'var(--space-md)' }}>
+              {/* Icon with light burnt-orange background circle */}
+              <div
+                style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: '50%',
+                  background: 'var(--color-cta-light)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--color-cta)',
+                  marginBottom: 'var(--space-md)',
+                }}
+              >
                 {icon}
               </div>
               <h3

@@ -163,79 +163,100 @@ function HomePage() {
       <section
         id="contact"
         style={{
-          background: 'var(--color-bg-alt)',
+          background: '#F8F6F2',
           paddingTop: 'var(--space-3xl)',
           paddingBottom: 'var(--space-3xl)',
         }}
       >
         <div className="custom-container max-w-2xl mx-auto text-center">
-          <h2 style={{ marginBottom: 'var(--space-md)' }}>Get Your Free Quote</h2>
-          <p
+          {/* Card wrapper */}
+          <div
             style={{
-              fontSize: 'var(--text-body-lg)',
-              color: 'var(--color-text-muted)',
-              lineHeight: 'var(--leading-body)',
-              marginBottom: 'var(--space-md)',
+              background: 'var(--color-bg)',
+              borderRadius: 'var(--card-radius-lg)',
+              padding: 'var(--space-2xl) var(--space-xl)',
+              boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06)',
             }}
           >
-            Call, text, or email — whatever&rsquo;s easiest. We&rsquo;ll get back
-            to you fast.
-          </p>
+            <h2 style={{ marginBottom: 'var(--space-md)' }}>Get Your Free Quote</h2>
+            <p
+              style={{
+                fontSize: 'var(--text-body-lg)',
+                color: 'var(--color-text-muted)',
+                lineHeight: 'var(--leading-body)',
+                marginBottom: 'var(--space-md)',
+              }}
+            >
+              Call, text, or email — whatever&rsquo;s easiest. We&rsquo;ll get back
+              to you fast.
+            </p>
 
-          <p
-            style={{
-              fontSize: 'var(--text-body)',
-              color: 'var(--color-cta)',
-              fontWeight: 600,
-              marginBottom: 'var(--space-xl)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-            }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="3" width="20" height="18" rx="3" />
-              <circle cx="12" cy="13" r="3" />
-              <path d="M17 8h.01" />
-            </svg>
-            Text us a photo of your project for a faster quote
-          </p>
+            <p
+              style={{
+                fontSize: 'var(--text-body)',
+                color: 'var(--color-cta)',
+                fontWeight: 600,
+                marginBottom: 'var(--space-xl)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="3" width="20" height="18" rx="3" />
+                <circle cx="12" cy="13" r="3" />
+                <path d="M17 8h.01" />
+              </svg>
+              Text us a photo of your project for a faster quote
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            {/* REPLACE WITH REAL PHONE NUMBER */}
-            <a
-              href="tel:+15551234567"
-              className="btn-cta w-full sm:w-auto contact-btn"
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              {/* REPLACE WITH REAL PHONE NUMBER */}
+              <a
+                href="tel:+15551234567"
+                className="btn-cta w-full sm:w-auto contact-btn"
+                style={{ gap: '10px' }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                Call Now
+              </a>
+              {/* REPLACE WITH REAL PHONE NUMBER */}
+              <a
+                href="sms:+15551234567"
+                className="btn-secondary w-full sm:w-auto contact-btn"
+                style={{ height: '56px', fontSize: '1rem', fontWeight: 700, padding: '0 32px', gap: '10px' }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                </svg>
+                Text Us
+              </a>
+              <a
+                href="mailto:Charles.homeservices@gmail.com"
+                className="btn-secondary w-full sm:w-auto contact-btn"
+                style={{ height: '56px', fontSize: '1rem', fontWeight: 700, padding: '0 32px', gap: '10px' }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Email Us
+              </a>
+            </div>
+
+            <p
+              style={{
+                fontSize: 'var(--text-body)',
+                color: 'var(--color-text-muted)',
+                fontStyle: 'italic',
+              }}
             >
-              Call Now
-            </a>
-            {/* REPLACE WITH REAL PHONE NUMBER */}
-            <a
-              href="sms:+15551234567"
-              className="btn-secondary w-full sm:w-auto contact-btn"
-              style={{ height: '56px', fontSize: '1rem', fontWeight: 700, padding: '0 32px' }}
-            >
-              Text Us
-            </a>
-            <a
-              href="mailto:Charles.homeservices@gmail.com"
-              className="btn-secondary w-full sm:w-auto contact-btn"
-              style={{ height: '56px', fontSize: '1rem', fontWeight: 700, padding: '0 32px' }}
-            >
-              Email Us
-            </a>
+              Ask us — if it can be painted, we probably can.
+            </p>
           </div>
-
-          <p
-            style={{
-              fontSize: 'var(--text-body)',
-              color: 'var(--color-text-muted)',
-              fontStyle: 'italic',
-            }}
-          >
-            Ask us — if it can be painted, we probably can.
-          </p>
         </div>
       </section>
     </>

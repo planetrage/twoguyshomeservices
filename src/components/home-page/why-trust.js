@@ -28,8 +28,49 @@ function WhyTrust() {
         background: 'var(--color-bg-alt)',
         paddingTop: 'var(--space-3xl)',
         paddingBottom: 'var(--space-3xl)',
+        position: 'relative',
       }}
     >
+      {/* Decorative paint brush stroke divider at top */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '-30px',
+          left: 0,
+          width: '100%',
+          height: '60px',
+          pointerEvents: 'none',
+          overflow: 'hidden',
+        }}
+      >
+        <svg
+          viewBox="0 0 1440 60"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          style={{ width: '100%', height: '60px', display: 'block' }}
+        >
+          {/* Main brush stroke */}
+          <path
+            d="M-20 32 Q180 12 360 28 Q540 46 720 22 Q900 4 1080 30 Q1260 50 1460 24"
+            stroke="#D4511E"
+            strokeWidth="3"
+            opacity="0.09"
+            fill="none"
+            strokeLinecap="round"
+          />
+          {/* Secondary thin stroke */}
+          <path
+            d="M-20 38 Q240 18 480 35 Q720 50 960 26 Q1200 8 1460 32"
+            stroke="#D4511E"
+            strokeWidth="1.5"
+            opacity="0.06"
+            fill="none"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
       <div className="custom-container">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -47,11 +88,11 @@ function WhyTrust() {
                 alignItems: 'flex-start',
               }}
             >
-              <div
+              <div className="trust-number-circle"
                 style={{
                   flexShrink: 0,
-                  width: '40px',
-                  height: '40px',
+                  width: '48px',
+                  height: '48px',
                   borderRadius: '50%',
                   background: 'var(--color-cta-light)',
                   color: 'var(--color-cta)',
@@ -59,7 +100,8 @@ function WhyTrust() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontWeight: 700,
-                  fontSize: 'var(--text-small)',
+                  fontSize: 'var(--text-body)',
+                  boxShadow: '0 0 0 0 rgba(212, 81, 30, 0.15)',
                 }}
               >
                 {i + 1}
