@@ -1,41 +1,43 @@
 /* ============================================
-   Olympus Protocol — Design Tokens
-   All CSS variables from the Goonzerflow Design System
+   Two Guys Home Services — Design Tokens
+   Clean, modern painting business theme
    ============================================ */
 
 :root {
-  /* ---- Core Navy ---- */
-  --olympus-navy:        #0B1120;
-  --olympus-navy-light:  #141E33;
-  --olympus-navy-mid:    #1C2A45;
+  /* ---- Backgrounds ---- */
+  --color-bg:            #FFFFFF;
+  --color-bg-alt:        #F5F3F0;
+  --color-bg-dark:       #1B2D4F;
+  --color-bg-footer:     #141F35;
 
-  /* ---- Marble ---- */
-  --marble-white:        #F2EDE8;
-  --marble-warm:         #E8E0D6;
-  --marble-cool:         #D4CCC2;
-  --marble-deep:         #B8AFA5;
+  /* ---- Text ---- */
+  --color-text:          #1A1A1A;
+  --color-text-muted:    #6B6B6B;
+  --color-text-light:    #999999;
+  --color-text-on-dark:  #FFFFFF;
 
-  /* ---- Gold ---- */
-  --gold-primary:        #C9A84C;
-  --gold-light:          #E2C97E;
-  --gold-dark:           #9A7B2E;
-  --gold-muted:          #7A6530;
-  --gold-glow:           rgba(201, 168, 76, 0.15);
+  /* ---- Headings ---- */
+  --color-heading:       #1B2D4F;
+
+  /* ---- CTA / Primary Action ---- */
+  --color-cta:           #D4511E;
+  --color-cta-hover:     #B8431A;
+  --color-cta-light:     rgba(212, 81, 30, 0.10);
+  --color-cta-text:      #FFFFFF;
+
+  /* ---- Borders & Dividers ---- */
+  --color-border:        #E5E2DD;
+  --color-border-light:  #F0EDE9;
 
   /* ---- Semantic ---- */
-  --risk-high:           #D94F4F;
-  --risk-medium:         #D9A34F;
-  --risk-low:            #4FAD6B;
-  --info-blue:           #4F8FD9;
-
-  /* ---- Lightning ---- */
-  --lightning-core:      #E8D5A0;
-  --lightning-edge:      #F5EED4;
-  --lightning-ambient:   rgba(232, 213, 160, 0.08);
+  --color-success:       #2D8A4E;
+  --color-warning:       #D9A34F;
+  --color-error:         #D94F4F;
+  --color-info:          #4F8FD9;
 
   /* ---- Typography ---- */
-  --font-display:  'Cinzel', 'Times New Roman', serif;
-  --font-body:     'Raleway', 'Helvetica Neue', sans-serif;
+  --font-display:  'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+  --font-body:     'DM Sans', 'Helvetica Neue', sans-serif;
   --font-data:     'DM Mono', 'Courier New', monospace;
 
   /* Display sizes */
@@ -60,9 +62,9 @@
   --leading-data:    1.4;
 
   /* Letter Spacing */
-  --tracking-display: 0.04em;
-  --tracking-caps:    0.08em;
-  --tracking-body:    0.01em;
+  --tracking-display: -0.02em;
+  --tracking-caps:    0.06em;
+  --tracking-body:    0.005em;
 
   /* ---- Spacing ---- */
   --space-xs:   0.25rem;

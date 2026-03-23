@@ -1,34 +1,29 @@
-import LightningDivider from '../ui/LightningDivider';
-import GoldCTA from '../ui/GoldCTA';
-
 function Hero() {
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full"
       style={{
-        minHeight: '80vh',
+        minHeight: '70vh',
         display: 'flex',
         alignItems: 'center',
-        backgroundImage:
-          'linear-gradient(rgba(11,17,32,0.72), rgba(11,17,32,0.72)), url(/images/hero/hero-temple-goldlight.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: 'linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-alt) 100%)',
       }}
     >
-      <div className="custom-container relative z-10 py-24 md:py-32">
+      <div className="custom-container relative z-10 py-20 md:py-28">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Eyebrow */}
+          {/* Business Name */}
           <p
-            className="mb-6"
+            className="mb-4"
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'var(--text-small)',
-              fontWeight: 600,
+              fontWeight: 700,
               letterSpacing: 'var(--tracking-caps)',
               textTransform: 'uppercase',
+              color: 'var(--color-cta)',
             }}
           >
-            <span className="gold-text">Updated February 2026</span>
+            Two Guys Home Services
           </p>
 
           {/* Headline */}
@@ -36,40 +31,46 @@ function Hero() {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'var(--text-hero)',
-              fontWeight: 700,
+              fontWeight: 800,
               lineHeight: 'var(--leading-display)',
               letterSpacing: 'var(--tracking-display)',
-              color: 'var(--marble-white)',
+              color: 'var(--color-heading)',
               marginBottom: 'var(--space-lg)',
             }}
           >
-            Claim the Best Sweepstakes Casino Bonuses
+            Professional Painting Services in Irving, TX
           </h1>
 
-          {/* Subhead */}
+          {/* Subheadline */}
           <p
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: 'var(--text-body-lg)',
               lineHeight: 'var(--leading-body)',
-              color: 'var(--marble-warm)',
+              color: 'var(--color-text-muted)',
               marginBottom: 'var(--space-xl)',
               maxWidth: '600px',
               marginLeft: 'auto',
               marginRight: 'auto',
             }}
           >
-            Updated rankings. Verified offers. Structured analysis — not hype.
+            Interior, exterior, fences, and more. Quality work, fair pricing —
+            we show up on time and get it done right.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <GoldCTA href="/reviews" variant="cta">
-              Explore Top Bonuses
-            </GoldCTA>
-            <GoldCTA href="/about" variant="ghost">
-              How We Rank &rarr;
-            </GoldCTA>
+            <a href="#contact" className="btn-cta w-full sm:w-auto">
+              Request Free Quote
+            </a>
+            {/* REPLACE WITH REAL PHONE NUMBER */}
+            <a
+              href="tel:+15551234567"
+              className="btn-secondary w-full sm:w-auto"
+              style={{ height: '56px', fontSize: '1rem', fontWeight: 700, padding: '0 32px' }}
+            >
+              Call or Text Us
+            </a>
           </div>
 
           {/* Trust Signals */}
@@ -78,20 +79,14 @@ function Hero() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: 'var(--text-small)',
-              color: 'var(--marble-warm)',
+              color: 'var(--color-text-muted)',
             }}
           >
-            <span>&#10003; No purchase necessary</span>
-            <span>&#10003; 18+ only</span>
-            <span>&#10003; Updated Feb 2026</span>
-            <span>&#10003; Independent reviews</span>
+            <span>&#10003; Free Estimates</span>
+            <span>&#10003; Residential &amp; Commercial</span>
+            <span>&#10003; Irving, TX &amp; Surrounding Areas</span>
           </div>
         </div>
-      </div>
-
-      {/* Lightning divider at bottom */}
-      <div className="absolute bottom-0 left-0 w-full">
-        <LightningDivider />
       </div>
     </section>
   );

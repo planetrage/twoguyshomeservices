@@ -1,5 +1,5 @@
 /* ============================================
-   Goonzerflow — Olympus Protocol
+   Two Guys Home Services
    Global Stylesheet
    ============================================ */
 
@@ -8,8 +8,8 @@
 @import './olympus-utilities.css';
 
 /* ---- Google Fonts ---- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
 
 /* ---- Tailwind ---- */
@@ -21,8 +21,8 @@
 @layer base {
   body {
     font-family: var(--font-body);
-    color: var(--marble-white);
-    background-color: var(--olympus-navy);
+    color: var(--color-text);
+    background-color: var(--color-bg);
     letter-spacing: var(--tracking-body);
     line-height: var(--leading-body);
     -webkit-font-smoothing: antialiased;
@@ -33,22 +33,22 @@
     font-family: var(--font-display);
     letter-spacing: var(--tracking-display);
     line-height: var(--leading-display);
-    color: var(--marble-white);
+    color: var(--color-heading);
   }
 
   h1 {
     font-size: var(--text-page-title);
-    font-weight: 700;
+    font-weight: 800;
   }
 
   h2 {
     font-size: var(--text-section);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   h3 {
     font-size: var(--text-subsection);
-    font-weight: 500;
+    font-weight: 700;
   }
 
   a {
@@ -63,7 +63,7 @@
 
   input:focus-visible,
   textarea:focus-visible {
-    outline: 1px solid var(--gold-primary);
+    outline: 1px solid var(--color-cta);
     outline-offset: 2px;
   }
 }
@@ -73,8 +73,8 @@
   @apply xl:max-w-full xl:px-[70px] px-[15px];
 }
 
-/* ---- Olympus Header ---- */
-.olympus-header {
+/* ---- Site Header ---- */
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -83,95 +83,89 @@
   z-index: 50;
   display: flex;
   align-items: center;
-  background: rgba(11, 17, 32, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
-  transition: background 0.3s ease;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.olympus-header.scrolled {
-  background: rgba(11, 17, 32, 0.95);
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
-.olympus-nav-link {
+.nav-link {
   font-family: var(--font-body);
   font-weight: 500;
   font-size: var(--text-small);
-  color: var(--marble-warm);
+  color: var(--color-text-muted);
   position: relative;
   padding: 4px 0;
   transition: color 0.2s ease;
 }
 
-.olympus-nav-link::after {
+.nav-link::after {
   content: '';
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gold-primary);
+  background: var(--color-cta);
   transition: width 0.3s ease;
 }
 
-.olympus-nav-link:hover,
-.olympus-nav-link.active {
-  color: var(--marble-white);
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-heading);
 }
 
-.olympus-nav-link:hover::after,
-.olympus-nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
-/* ---- Olympus Brand ---- */
-.olympus-brand {
+/* ---- Site Brand ---- */
+.site-brand {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1.25rem;
-  letter-spacing: var(--tracking-caps);
-  color: var(--marble-white);
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-display);
+  color: var(--color-heading);
 }
 
-/* ---- Olympus Footer ---- */
-.olympus-footer {
-  background: #080D18;
-  color: var(--marble-cool);
+/* ---- Site Footer ---- */
+.site-footer {
+  background: var(--color-bg-footer);
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.olympus-footer a {
-  color: var(--marble-cool);
+.site-footer a {
+  color: rgba(255, 255, 255, 0.7);
   transition: color 0.2s ease;
 }
 
-.olympus-footer a:hover {
-  color: var(--marble-white);
+.site-footer a:hover {
+  color: #FFFFFF;
 }
 
-.olympus-footer-heading {
+.footer-heading {
   font-family: var(--font-display);
   font-size: var(--text-small);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
-  color: var(--gold-primary);
+  color: var(--color-cta);
   margin-bottom: var(--space-md);
 }
 
 /* ---- Mobile Overlay Menu ---- */
-.olympus-mobile-overlay {
+.mobile-overlay {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: linear-gradient(
-    180deg,
-    var(--olympus-navy) 0%,
-    #0F1828 30%,
-    #141E33 60%,
-    var(--olympus-navy-mid) 100%
-  );
+  background: rgba(255, 255, 255, 0.98);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -182,70 +176,71 @@
   transition: opacity 0.3s ease;
 }
 
-.olympus-mobile-overlay.open {
+.mobile-overlay.open {
   opacity: 1;
   pointer-events: auto;
 }
 
-.olympus-mobile-overlay a {
+.mobile-overlay a {
   font-family: var(--font-display);
   font-size: var(--text-section);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: var(--tracking-display);
-  color: var(--marble-warm);
+  color: var(--color-heading);
   transition: color 0.2s ease;
 }
 
-.olympus-mobile-overlay a:hover {
-  color: var(--gold-primary);
+.mobile-overlay a:hover {
+  color: var(--color-cta);
 }
 
-/* ---- Gold Buttons ---- */
-.btn-gold-primary {
+/* ---- Primary Buttons ---- */
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 48px;
   padding: 0 24px;
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 45%, var(--gold-light) 100%);
-  color: var(--olympus-navy);
+  background: var(--color-cta);
+  color: var(--color-cta-text);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--text-small);
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.3s ease, transform 0.2s ease;
   text-decoration: none;
 }
 
-.btn-gold-primary:hover {
-  box-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+.btn-primary:hover {
+  background: var(--color-cta-hover);
+  box-shadow: 0 4px 16px rgba(212, 81, 30, 0.25);
   transform: translateY(-1px);
-  color: var(--olympus-navy);
+  color: var(--color-cta-text);
 }
 
-.btn-gold-secondary {
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 44px;
   padding: 0 20px;
   background: transparent;
-  color: var(--gold-primary);
+  color: var(--color-cta);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--text-small);
-  border: 1px solid var(--gold-primary);
+  border: 1px solid var(--color-cta);
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
   text-decoration: none;
 }
 
-.btn-gold-secondary:hover {
-  background: var(--gold-glow);
-  color: var(--gold-light);
+.btn-secondary:hover {
+  background: var(--color-cta-light);
+  color: var(--color-cta-hover);
 }
 
 .btn-ghost {
@@ -255,7 +250,7 @@
   height: auto;
   padding: 4px 16px;
   background: transparent;
-  color: var(--marble-warm);
+  color: var(--color-text-muted);
   font-family: var(--font-body);
   font-weight: 500;
   font-size: var(--text-small);
@@ -273,14 +268,14 @@
   left: 16px;
   right: 16px;
   height: 1px;
-  background: var(--marble-warm);
+  background: var(--color-text-muted);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
 }
 
 .btn-ghost:hover {
-  color: var(--marble-white);
+  color: var(--color-text);
 }
 
 .btn-ghost:hover::after {
@@ -288,44 +283,44 @@
 }
 
 /* CTA variant (larger) */
-.btn-gold-cta {
+.btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 56px;
   padding: 0 32px;
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 45%, var(--gold-light) 100%);
-  background-size: 200% 100%;
-  color: var(--olympus-navy);
+  background: var(--color-cta);
+  color: var(--color-cta-text);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 1rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.3s ease, transform 0.2s ease;
   text-decoration: none;
 }
 
-.btn-gold-cta:hover {
-  box-shadow: 0 0 30px rgba(201, 168, 76, 0.35);
+.btn-cta:hover {
+  background: var(--color-cta-hover);
+  box-shadow: 0 6px 24px rgba(212, 81, 30, 0.3);
   transform: translateY(-1px);
-  animation: lightning-shimmer 3s ease-in-out infinite;
-  color: var(--olympus-navy);
+  color: var(--color-cta-text);
 }
 
 /* ---- Cards ---- */
-.olympus-card {
-  background: var(--olympus-navy-light);
-  border: 1px solid rgba(201, 168, 76, 0.1);
+.site-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: var(--card-radius);
   padding: var(--space-lg);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.olympus-card:hover {
-  border-color: rgba(201, 168, 76, 0.3);
+.site-card:hover {
+  border-color: var(--color-cta);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
@@ -335,20 +330,20 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--olympus-navy);
+  background: var(--color-bg-alt);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--olympus-navy-mid);
+  background: var(--color-border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-muted);
+  background: var(--color-text-light);
 }
 
 /* ---- Selection ---- */
 ::selection {
-  background: var(--gold-glow);
-  color: var(--marble-white);
+  background: var(--color-cta-light);
+  color: var(--color-text);
 }

@@ -1,88 +1,84 @@
 /* ============================================
-   Olympus Protocol — Utility Classes
-   Textures, gradients, dividers, and effects
+   Two Guys Home Services — Utility Classes
+   Gradients, dividers, and effects
    ============================================ */
 
-/* ---- Gold Text Gradient ---- */
-.gold-text {
-  background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+/* ---- CTA Text Gradient ---- */
+.cta-text {
+  background: linear-gradient(135deg, var(--color-cta) 0%, var(--color-cta-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ---- Gold Surface Gradient ---- */
-.gold-gradient {
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 45%, var(--gold-light) 100%);
+/* ---- CTA Surface Gradient ---- */
+.cta-gradient {
+  background: linear-gradient(135deg, var(--color-cta-hover) 0%, var(--color-cta) 100%);
 }
 
-/* ---- Marble Texture Overlay ---- */
-.marble-texture {
+/* ---- Subtle Texture Overlay ---- */
+.subtle-texture {
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(242, 237, 232, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(242, 237, 232, 0.02) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(27, 45, 79, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(27, 45, 79, 0.02) 0%, transparent 50%);
 }
 
-/* ---- Olympus Sky Gradient ---- */
-.olympus-sky {
+/* ---- Section Background Gradient ---- */
+.section-gradient {
   background: linear-gradient(
     180deg,
-    var(--olympus-navy) 0%,
-    #0F1828 30%,
-    #141E33 60%,
-    var(--olympus-navy-mid) 100%
+    var(--color-bg) 0%,
+    var(--color-bg-alt) 100%
   );
 }
 
-/* ---- Lightning Divider ---- */
-.lightning-divider {
-  height: 2px;
+/* ---- Divider ---- */
+.section-divider {
+  height: 1px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--gold-muted) 15%,
-    var(--lightning-core) 50%,
-    var(--gold-muted) 85%,
+    var(--color-border) 15%,
+    var(--color-border) 85%,
     transparent 100%
   );
-  opacity: 0.6;
 }
 
-/* ---- Column Border (pull-quote motif) ---- */
-.column-border {
-  border-left: 3px solid var(--gold-muted);
+/* ---- Accent Border (pull-quote motif) ---- */
+.accent-border {
+  border-left: 3px solid var(--color-cta);
   padding-left: var(--space-lg);
   position: relative;
 }
 
-.column-border::before,
-.column-border::after {
+.accent-border::before,
+.accent-border::after {
   content: '';
   position: absolute;
   left: -5px;
   width: 7px;
   height: 7px;
-  background: var(--gold-primary);
+  background: var(--color-cta);
   border-radius: 1px;
 }
 
-.column-border::before { top: 0; }
-.column-border::after { bottom: 0; }
+.accent-border::before { top: 0; }
+.accent-border::after { bottom: 0; }
 
-/* ---- Lightning Shimmer Keyframe ---- */
-@keyframes lightning-shimmer {
+/* ---- CTA Shimmer Keyframe ---- */
+@keyframes cta-shimmer {
   0%, 100% { background-position: -200% center; }
   50% { background-position: 200% center; }
 }
 
-.lightning-shimmer {
+.cta-shimmer {
   background-size: 200% 100%;
-  animation: lightning-shimmer 3s ease-in-out infinite;
+  animation: cta-shimmer 3s ease-in-out infinite;
 }
 
-/* ---- Gold Glow ---- */
-.gold-glow {
-  background-color: var(--gold-glow);
+/* ---- CTA Glow ---- */
+.cta-glow {
+  background-color: var(--color-cta-light);
 }
 
 /* ---- Fade-up on scroll (base state) ---- */
@@ -99,7 +95,7 @@
 
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
-  .lightning-shimmer {
+  .cta-shimmer {
     animation: none;
   }
   .fade-up {

@@ -1,7 +1,7 @@
 {
-    "name": "SmartTIX",
-    "description": "Ticket Management Application",
-    "author": "SmartTIX LLC",
+    "name": "twoguyshomeservices",
+    "description": "Two Guys Home Services - Professional Painting in Irving TX",
+    "author": "Two Guys Home Services",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",

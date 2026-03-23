@@ -7,23 +7,21 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'olympus-navy': '#0B1120',
-                'olympus-navy-light': '#141E33',
-                'olympus-navy-mid': '#1C2A45',
-                'marble-white': '#F2EDE8',
-                'marble-warm': '#E8E0D6',
-                'marble-cool': '#D4CCC2',
-                'marble-deep': '#B8AFA5',
-                'gold-primary': '#C9A84C',
-                'gold-light': '#E2C97E',
-                'gold-dark': '#9A7B2E',
-                'gold-muted': '#7A6530',
-                'risk-high': '#D94F4F',
-                'risk-medium': '#D9A34F',
-                'risk-low': '#4FAD6B',
-                'info-blue': '#4F8FD9',
-                primary: '#C9A84C',
-                secondary: '#333333',
+                'heading':       '#1B2D4F',
+                'cta':           '#D4511E',
+                'cta-hover':     '#B8431A',
+                'accent-bg':     '#F5F3F0',
+                'border-subtle': '#E5E2DD',
+                'text-main':     '#1A1A1A',
+                'text-muted':    '#6B6B6B',
+                'text-light':    '#999999',
+                'footer-bg':     '#141F35',
+                'success':       '#2D8A4E',
+                'warning':       '#D9A34F',
+                'error':         '#D94F4F',
+                'info':          '#4F8FD9',
+                primary:         '#D4511E',
+                secondary:       '#1B2D4F',
             },
             padding: {
                 155: '155px',
@@ -48,11 +46,9 @@ module.exports = {
         },
 
         fontFamily: {
-            display: ['Cinzel', 'Times New Roman', 'serif'],
-            body: ['Raleway', 'Helvetica Neue', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Helvetica Neue', 'sans-serif'],
+            body: ['DM Sans', 'Helvetica Neue', 'sans-serif'],
             data: ['DM Mono', 'Courier New', 'monospace'],
-            proxima: ['proxima-nova', 'sans-serif'],
-            poppins: ['poppins', 'sans-serif'],
         },
 
         container: {

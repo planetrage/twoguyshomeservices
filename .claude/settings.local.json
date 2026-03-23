@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rn \"var\\(--olympus-navy\\)\\\\|var\\(--marble-white\\)\\\\|var\\(--marble-warm\\)\\\\|var\\(--marble-cool\\)\\\\|var\\(--marble-deep\\)\\\\|var\\(--gold-primary\\)\\\\|var\\(--gold-light\\)\\\\|var\\(--gold-muted\\)\" /c/Users/swags/twoguyshomeservices/src --include=*.js --include=*.jsx --include=*.ts --include=*.tsx)"
+    ]
+  }
+}

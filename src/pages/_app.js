@@ -1,8 +1,6 @@
 import '../styles/globals.css';
 import Layout from '../components/layout/layout';
 import Head from 'next/head';
-import Analytics from '../components/Analytics';
-import { ScrollToTop } from '../components/scroll';
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -13,10 +11,10 @@ function MyApp({ Component, pageProps }) {
                     content='width=device-width, initial-scale=1'
                 />
                 <link rel='shortcut icon' href='../favicon.png' />
+                <link rel='preconnect' href='https://fonts.googleapis.com' />
+                <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
             </Head>
-            <Analytics />
             <Component {...pageProps} />
-            {/*<ScrollToTop />*/}
         </Layout>
     );
 }
