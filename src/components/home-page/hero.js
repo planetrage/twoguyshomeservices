@@ -1,20 +1,20 @@
 function Hero() {
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden hero-section"
       style={{
-        minHeight: '70vh',
+        minHeight: '60vh',
         display: 'flex',
         alignItems: 'center',
         background: 'linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-alt) 100%)',
       }}
     >
-      {/* Decorative paint roller — right side, very subtle */}
+      {/* Decorative paint roller — right-center area, very subtle */}
       <div
         className="hidden md:block"
         style={{
           position: 'absolute',
-          right: '-20px',
+          right: '12%',
           top: '50%',
           transform: 'translateY(-50%)',
           opacity: 0.09,
@@ -45,7 +45,7 @@ function Hero() {
         </svg>
       </div>
 
-      <div className="custom-container relative z-10 py-20 md:py-28">
+      <div className="custom-container relative z-10 py-12 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           {/* Business Name */}
           <p
@@ -132,7 +132,7 @@ function Hero() {
           bottom: 0,
           left: 0,
           width: '100%',
-          height: '80px',
+          height: '50px',
           background: 'linear-gradient(to bottom, transparent, var(--color-bg-alt))',
           zIndex: 5,
           pointerEvents: 'none',
